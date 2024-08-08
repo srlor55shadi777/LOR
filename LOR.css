@@ -7,28 +7,29 @@ body {
 }
 
 .container {
-    max-width: 800px; /* تحديد عرض الصفحة الكلي */
+    max-width: 900px; /* زيادة عرض الصفحة الكلي */
     margin: 0 auto; /* توسيط الصفحة */
     padding: 20px; /* مسافة حول المحتوى */
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* زيادة تأثير الظل */
+    border-radius: 12px; /* تعديل زوايا العنصر */
 }
 
 .header {
     display: flex;
     align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 20px;
+    padding: 20px; /* زيادة المسافة الداخلية */
+    border-bottom: 3px solid #007BFF; /* تغيير لون الحدود */
+    margin-bottom: 30px; /* زيادة المسافة السفلية */
+    transition: background-color 0.3s ease; /* تأثير تغيير الخلفية */
 }
 
 .header img {
     border: 5px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 150px; /* تعديل عرض الصورة */
-    height: 225px; /* تعديل ارتفاع الصورة */
+    border-radius: 12px; /* تعديل زوايا الصورة */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); /* زيادة تأثير الظل */
+    width: 180px; /* تعديل عرض الصورة */
+    height: 270px; /* تعديل ارتفاع الصورة */
     object-fit: cover;
     margin-right: 20px;
 }
@@ -40,47 +41,49 @@ body {
 
 .header h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 32px; /* زيادة حجم الخط */
     color: #333;
+    transition: color 0.3s ease; /* تأثير تغيير اللون */
 }
 
 .header .sub-title {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px; /* زيادة حجم الخط */
 }
 
 .header .sub-title .green-text {
-    color: green;
+    color: #28a745; /* تغيير اللون الأخضر */
     font-weight: bold;
 }
 
 .header .sub-title .gray-text {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.6); /* تعديل اللون الرمادي */
 }
 
 .chapter-buttons {
     display: flex;
-    justify-content: space-between; /* توزيع الأزرار بالتساوي */
+    justify-content: space-around; /* توزيع الأزرار بشكل متساوي */
     padding: 10px 0; /* مسافة بين الأزرار وحافة الصفحة */
-    margin-top: 20px;
+    margin-top: 30px; /* زيادة المسافة العلوية */
 }
 
 .chapter-buttons a {
     flex-grow: 1; /* الأزرار تأخذ مساحة متساوية */
     text-align: center;
     margin: 0 5px;
-    padding: 12px 0;
-    font-size: 18px;
+    padding: 15px 0; /* زيادة المسافة الداخلية */
+    font-size: 20px; /* زيادة حجم الخط */
     background-color: #007BFF;
     color: white;
     text-decoration: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* تعديل زوايا الأزرار */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثيرات */
 }
 
 .chapter-buttons a:hover {
     background-color: #0056b3;
-    transform: translateY(-3px); /* تأثير بسيط عند تمرير الفأرة */
-}
+    transform: translateY(-5px); /* تأثير أكبر عند تمرير الفأرة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التمرير */
+        }
