@@ -6,27 +6,36 @@ body {
     direction: rtl; /* لجعل الاتجاه من اليمين لليسار */
 }
 
+.container {
+    max-width: 800px; /* تحديد عرض الصفحة الكلي */
+    margin: 0 auto; /* توسيط الصفحة */
+    padding: 20px; /* مسافة حول المحتوى */
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
 .header {
     display: flex;
     align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* إضافة مسافة أسفل الرأس */
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
 }
 
 .header img {
     border: 5px solid #ddd;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 120px; /* عرض الصورة */
-    height: 180px; /* ارتفاع الصورة */
+    width: 150px; /* تعديل عرض الصورة */
+    height: 225px; /* تعديل ارتفاع الصورة */
     object-fit: cover;
     margin-right: 20px;
 }
 
 .text-content {
-    margin-right: 20px; /* إضافة مسافة بين النص والصورة */
+    margin-right: 20px;
+    flex-grow: 1; /* يسمح للنص بأخذ المساحة المتاحة */
 }
 
 .header h1 {
@@ -50,13 +59,17 @@ body {
 }
 
 .chapter-buttons {
-    text-align: right;
-    margin: 0 20px; /* مسافة من حافة الشاشة */
+    display: flex;
+    justify-content: space-between; /* توزيع الأزرار بالتساوي */
+    padding: 10px 0; /* مسافة بين الأزرار وحافة الصفحة */
+    margin-top: 20px;
 }
 
 .chapter-buttons a {
-    margin: 10px;
-    padding: 12px 25px;
+    flex-grow: 1; /* الأزرار تأخذ مساحة متساوية */
+    text-align: center;
+    margin: 0 5px;
+    padding: 12px 0;
     font-size: 18px;
     background-color: #007BFF;
     color: white;
@@ -65,7 +78,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    display: inline-block;
 }
 
 .chapter-buttons a:hover {
