@@ -3,87 +3,104 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    direction: rtl; /* لجعل الاتجاه من اليمين لليسار */
+    direction: rtl;
 }
 
 .container {
-    max-width: 900px; /* زيادة عرض الصفحة الكلي */
-    margin: 0 auto; /* توسيط الصفحة */
-    padding: 20px; /* مسافة حول المحتوى */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
     background-color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* زيادة تأثير الظل */
-    border-radius: 12px; /* تعديل زوايا العنصر */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 .header {
     display: flex;
     align-items: center;
-    padding: 20px; /* زيادة المسافة الداخلية */
-    border-bottom: 3px solid #007BFF; /* تغيير لون الحدود */
-    margin-bottom: 30px; /* زيادة المسافة السفلية */
-    transition: background-color 0.3s ease; /* تأثير تغيير الخلفية */
+    padding: 20px;
+    border-bottom: 3px solid #007BFF;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
 }
 
 .header img {
     border: 5px solid #ddd;
-    border-radius: 12px; /* تعديل زوايا الصورة */
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); /* زيادة تأثير الظل */
-    width: 180px; /* تعديل عرض الصورة */
-    height: 270px; /* تعديل ارتفاع الصورة */
+    border-radius: 12px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    width: 180px;
+    height: 270px;
     object-fit: cover;
     margin-right: 20px;
 }
 
 .text-content {
     margin-right: 20px;
-    flex-grow: 1; /* يسمح للنص بأخذ المساحة المتاحة */
+    flex-grow: 1;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 32px; /* زيادة حجم الخط */
+    font-size: 32px;
     color: #333;
-    transition: color 0.3s ease; /* تأثير تغيير اللون */
+    transition: color 0.3s ease;
 }
 
 .header .sub-title {
     margin-top: 10px;
-    font-size: 18px; /* زيادة حجم الخط */
+    font-size: 18px;
 }
 
 .header .sub-title .green-text {
-    color: #28a745; /* تغيير اللون الأخضر */
+    color: #28a745;
     font-weight: bold;
 }
 
 .header .sub-title .gray-text {
-    color: rgba(0, 0, 0, 0.6); /* تعديل اللون الرمادي */
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .chapter-buttons {
     display: flex;
-    justify-content: space-around; /* توزيع الأزرار بشكل متساوي */
-    padding: 10px 0; /* مسافة بين الأزرار وحافة الصفحة */
-    margin-top: 30px; /* زيادة المسافة العلوية */
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-top: 30px;
 }
 
 .chapter-buttons a {
-    flex-grow: 1; /* الأزرار تأخذ مساحة متساوية */
+    flex-grow: 1;
     text-align: center;
     margin: 0 5px;
-    padding: 15px 0; /* زيادة المسافة الداخلية */
-    font-size: 20px; /* زيادة حجم الخط */
+    padding: 15px 0;
+    font-size: 20px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
     border: none;
-    border-radius: 8px; /* تعديل زوايا الأزرار */
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثيرات */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chapter-buttons a:hover {
     background-color: #0056b3;
-    transform: translateY(-5px); /* تأثير أكبر عند تمرير الفأرة */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التمرير */
-        }
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.countdown {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.countdown p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#countdown-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF;
+}
