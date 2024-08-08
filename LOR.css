@@ -33,7 +33,6 @@ body {
 .header .sub-title {
     margin-top: 5px;
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.5);
 }
 
 .header .sub-title .green-text {
@@ -41,23 +40,33 @@ body {
     font-weight: bold;
 }
 
+.header .sub-title .gray-text {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 .chapter-buttons {
-    text-align: center;
+    text-align: right;
     margin-top: 20px;
 }
 
-.chapter-buttons button {
+.chapter-buttons a {
     margin: 5px;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #007BFF;
     color: white;
+    text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
-.chapter-buttons button:hover {
+.chapter-buttons a:hover {
     background-color: #0056b3;
+}
+
+.chapter-buttons a:first-child {
+    margin-right: 0;
 }
