@@ -12,6 +12,7 @@ body {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* إضافة مسافة أسفل الرأس */
 }
 
 .header img {
@@ -24,15 +25,19 @@ body {
     margin-right: 20px;
 }
 
+.text-content {
+    margin-right: 20px; /* إضافة مسافة بين النص والصورة */
+}
+
 .header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
     color: #333;
 }
 
 .header .sub-title {
-    margin-top: 5px;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 .header .sub-title .green-text {
@@ -46,27 +51,24 @@ body {
 
 .chapter-buttons {
     text-align: right;
-    margin-top: 20px;
+    margin: 0 20px; /* مسافة من حافة الشاشة */
 }
 
 .chapter-buttons a {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 18px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-block;
 }
 
 .chapter-buttons a:hover {
     background-color: #0056b3;
-}
-
-.chapter-buttons a:first-child {
-    margin-right: 0;
+    transform: translateY(-3px); /* تأثير بسيط عند تمرير الفأرة */
 }
