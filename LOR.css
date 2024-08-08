@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    direction: rtl; /* لجعل الاتجاه من اليمين لليسار */
 }
 
 .header {
@@ -17,8 +18,8 @@ body {
     border: 5px solid #ddd;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 150px;
-    height: 150px;
+    width: 120px; /* عرض الصورة */
+    height: 180px; /* ارتفاع الصورة */
     object-fit: cover;
     margin-right: 20px;
 }
@@ -35,7 +36,28 @@ body {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.header .sub-title span {
+.header .sub-title .green-text {
     color: green;
     font-weight: bold;
+}
+
+.chapter-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.chapter-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chapter-buttons button:hover {
+    background-color: #0056b3;
 }
