@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     function getWeekNumber(date) {
         const startDate = new Date(date.getFullYear(), 0, 1);
