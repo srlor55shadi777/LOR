@@ -3,84 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عرض الرواية</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>رأس الموقع</title>
     <link rel="stylesheet" href="LOR.css">
 </head>
 <body>
-    <header>
-        <div class="cover-container">
-            <img src="https://via.placeholder.com/150x220" alt="غلاف الرواية">
-        </div>
+    <div class="header">
+        <img src="https://i.ibb.co/bL64RS6/2bc30887862c2aaaf87a9423b6031c70.jpg" alt="صورة">
         <div>
-            <h1>عنوان الرواية</h1>
-            <p>تصنيف الرواية: <span>خيال علمي</span></p>
-        </div>
-        <span class="edit-icon" onclick="openModal('editModal')"><i class="fas fa-pencil-alt"></i></span>
-    </header>
-
-    <div class="buttons-container">
-        <button onclick="openModal('modal1')">فصل 1</button>
-        <button onclick="openModal('modal2')">فصل 2</button>
-        <button onclick="openModal('modal3')">فصل 3</button>
-    </div>
-
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="ابحث عن فصل...">
-        <button onclick="searchChapters()">بحث</button>
-    </div>
-    <div class="results-container" id="resultsContainer">
-        <!-- سيتم عرض نتائج البحث هنا -->
-    </div>
-
-    <div class="control-panel">
-        <label for="font-size-range">حجم الخط:</label>
-        <input type="range" id="font-size-range" min="12" max="30" value="16" oninput="adjustFontSize(this.value)">
-        
-        <div class="color-picker-container">
-            <div class="color-picker" onclick="changeColor('#000000')"><div style="background-color: #000000;"></div></div>
-            <div class="color-picker" onclick="changeColor('#FF5733')"><div style="background-color: #FF5733;"></div></div>
-            <div class="color-picker" onclick="changeColor('#33FF57')"><div style="background-color: #33FF57;"></div></div>
-            <div class="color-picker" onclick="changeColor('#3357FF')"><div style="background-color: #3357FF;"></div></div>
-            <div class="color-picker" onclick="changeColor('#FFFF33')"><div style="background-color: #FFFF33;"></div></div>
-        </div>
-
-        <div>
-            <button class="new-feature" onclick="toggleNightMode()"><i class="fas fa-moon"></i> الوضع الليلي</button>
-            <button class="new-feature" onclick="toggleBoldText()"><i class="fas fa-bold"></i> تسميك الخط</button>
-        </div>
-    </div>
-
-    <!-- النوافذ المنبثقة (Modals) -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <p>محتوى فصل 1</p>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <p>محتوى فصل 2</p>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <p>محتوى فصل 3</p>
-        </div>
-    </div>
-
-    <!-- نافذة التعديل -->
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('editModal')">&times;</span>
-            <p>محتوى نافذة التعديل</p>
+            <h1>عنوان الموقع</h1>
+            <div class="sub-title">
+                <span>+16</span> مستمر
+            </div>
         </div>
     </div>
 
     <script src="LOR.js"></script>
 </body>
-  </html> 
+</html>
