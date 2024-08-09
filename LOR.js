@@ -7,10 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     const chapterButtonsContainer = document.getElementById('chapter-buttons');
-    const progressElement = document.getElementById('progress');
-    const messageElement = document.getElementById('message');
-    const themeToggleButton = document.getElementById('theme-toggle-button');
-    const body = document.body;
 
     function displayChapters(chaptersToDisplay) {
         chapterButtonsContainer.innerHTML = '';
@@ -22,28 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function updateProgressBar() {
-        const progressValue = 50; // مثال: 50%
-        progressElement.style.width = progressValue + '%';
-    }
-
-    function toggleTheme() {
-        body.classList.toggle('dark-mode');
-    }
-
-    function showMessage() {
-        messageElement.style.display = 'block';
-    }
-
     // Display all chapters initially
     displayChapters(chapters);
-
-    // Update progress bar initially
-    updateProgressBar();
-
-    // Show message after 1 second
-    setTimeout(showMessage, 1000);
-
-    // Toggle theme
-    themeToggleButton.addEventListener('click', toggleTheme);
 });
