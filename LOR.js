@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     const chapterButtonsContainer = document.getElementById('chapter-buttons');
-    const searchInput = document.getElementById('search-input');
-    const searchButton = document.getElementById('search-button');
+    const progressElement = document.getElementById('progress');
+    const messageElement = document.getElementById('message');
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    const body = document.body;
 
     function displayChapters(chaptersToDisplay) {
         chapterButtonsContainer.innerHTML = '';
@@ -20,22 +22,28 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function searchChapters() {
-        const query = searchInput.value.toLowerCase();
-        const filteredChapters = chapters.filter(chapter =>
-            chapter.title.toLowerCase().includes(query)
-        );
-        displayChapters(filteredChapters);
+    function updateProgressBar() {
+        const progressValue = 50; // مثال: 50%
+        progressElement.style.width = progressValue + '%';
+    }
+
+    function toggleTheme() {
+        body.classList.toggle('dark-mode');
+    }
+
+    function showMessage() {
+        messageElement.style.display = 'block';
     }
 
     // Display all chapters initially
     displayChapters(chapters);
 
-    // Add search functionality
-    searchButton.addEventListener('click', searchChapters);
-    searchInput.addEventListener('keyup', function(event) {
-        if (event.key === 'Enter') {
-            searchChapters();
-        }
-    });
+    // Update progress bar initially
+    updateProgressBar();
+
+    // Show message after 1 second
+    setTimeout(showMessage, 1000);
+
+    // Toggle theme
+    themeToggleButton.addEventListener('click', toggleTheme);
 });
