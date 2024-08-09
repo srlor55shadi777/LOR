@@ -50,15 +50,6 @@ body {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.novel-features {
-    margin-top: 20px;
-}
-
-.novel-features ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
 .footer {
     position: fixed;
     bottom: 0;
@@ -83,8 +74,8 @@ body {
 
 .chapter-buttons a {
     text-align: center;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px;
+    font-size: 14px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
