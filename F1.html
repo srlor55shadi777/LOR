@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شات بوت - لعبة عين</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 400px;
+            height: 600px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #075E54;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        .chat-message.user {
+            text-align: right;
+        }
+
+        .chat-message.bot {
+            text-align: left;
+        }
+
+        .chat-message p {
+            display: inline-block;
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #e4e6eb;
+        }
+
+        .chat-message.user p {
+            background-color: #DCF8C6;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .chat-footer button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #075E54;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">لعبة عين</div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-message bot"><p>مرحباً! هل أنت مستعد للعبة؟</p></div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="اكتب رسالتك هنا...">
+            <button onclick="sendMessage()">إرسال</button>
+        </div>
+    </div>
+
+    <script>
+        let timeout = 40000;
+        let poin = 5000;
+        let currentQuestion = null;
+        let timer = null;
+        const threshold = 0.72;
+        const messagesContainer = document.getElementById("chat-messages");
+
+        async function fetchQuestion() {
+            let response = await fetch('https://raw.githubusercontent.com/DK3MK/worker-bot/main/eye.json');
+            let questions = await response.json();
+            return questions[Math.floor(Math.random() * questions.length)];
+        }
+
+        function similarity(s1, s2) {
+            let longer = s1.length > s2.length ? s1 : s2;
+            let shorter = s1.length > s2.length ? s2 : s1;
+            let longerLength = longer.length;
+            if (longerLength === 0) {
+                return 1.0;
+            }
+            return (longerLength - editDistance(longer, shorter)) / longerLength;
+        }
+
+        function editDistance(s1, s2) {
+            let costs = new Array();
+            for (let i = 0; i <= s1.length; i++) {
+                let lastValue = i;
+                for (let j = 0; j <= s2.length; j++) {
+                    if (i == 0)
+                        costs[j] = j;
+                    else {
+                        if (j > 0) {
+                            let newValue = costs[j - 1];
+                            if (s1.charAt(i - 1) != s2.charAt(j - 1))
+                                newValue = Math.min(Math.min(newValue, lastValue), costs[j]) + 1;
+                            costs[j - 1] = lastValue;
+                            lastValue = newValue;
+                        }
+                    }
+                }
+                if (i > 0)
+                    costs[s2.length] = lastValue;
+            }
+            return costs[s2.length];
+        }
+
+        function displayMessage(message, isUser = false) {
+            let messageDiv = document.createElement("div");
+            messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.innerHTML = `<p>${message}</p>`;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        async function sendMessage() {
+            let input = document.getElementById("user-input");
+            let message = input.value.trim();
+            if (!message) return;
+
+            displayMessage(message, true);
+            input.value = "";
+
+            if (!currentQuestion) {
+                currentQuestion = await fetchQuestion();
+                displayMessage(`*الـوقـت⏳↞ ${(timeout / 1000).toFixed(2)} ثـانـيـة*\n*الـجـائـزة💰↞ +${poin} ذهــب*\n> قم بالرد على الرسالة بالإجابة`);
+                
+                timer = setTimeout(() => {
+                    displayMessage(`انتهى الوقت! الإجابة الصحيحة هي: ${currentQuestion.name}`);
+                    currentQuestion = null;
+                }, timeout);
+            } else {
+                if (similarity(message.toLowerCase(), currentQuestion.name.toLowerCase()) >= threshold) {
+                    clearTimeout(timer);
+                    displayMessage(`اجـابـة صـحـيـحـة! لقد ربحت ${poin} ذهــب.`);
+                    currentQuestion = null;
+                } else {
+                    displayMessage(`اجـابـة خـاطـئـة! حاول مرة أخرى.`);
+                }
+            }
+        }
+    </script>
+</body>
+  </html> 
