@@ -82,16 +82,16 @@ body {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 90%; /* تعديل ليتناسب مع شاشة المستخدم */
-    width: auto;
-    margin: 0 auto; /* لتوسيط المربع */
+    width: 80%; /* تصغير العرض ليتناسب مع شاشة المستخدم */
+    max-width: 600px; /* تحديد الحد الأقصى لعرض المربع */
+    margin: 20px auto; /* توسيط المربع وتحديد مسافة حوله */
     box-sizing: border-box;
 }
 
 .chapter-buttons a {
     text-align: center;
-    padding: 6px 10px;
-    font-size: 12px;
+    padding: 6px 12px; /* تحسين حجم الأزرار */
+    font-size: 14px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
