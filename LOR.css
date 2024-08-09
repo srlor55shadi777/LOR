@@ -50,6 +50,21 @@ body {
     color: rgba(0, 0, 0, 0.6);
 }
 
+.header-box {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header-box h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -67,12 +82,15 @@ body {
 
 .chapter-buttons {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
+    flex-wrap: wrap; /* لتجنب تجاوز الأزرار حجم الشاشة */
     padding: 10px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* ضمان عدم تجاوز عرض الشاشة */
+    box-sizing: border-box;
 }
 
 .chapter-buttons a {
