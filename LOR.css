@@ -9,9 +9,11 @@ body {
 .header {
     padding: 20px;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }
 
-.header-background {
+.header-box {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -24,26 +26,25 @@ body {
     border: 5px solid #ddd;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 180px;
-    height: 270px;
+    width: 150px;
+    height: 225px;
     object-fit: cover;
     margin-right: 20px;
 }
 
 .text-content {
-    margin-right: 20px;
     flex-grow: 1;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 32px;
+    font-size: 28px;
     color: #333;
 }
 
 .header .sub-title {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .header .sub-title .green-text {
