@@ -1,16 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
-    function getWeekNumber(date) {
-        const startDate = new Date(date.getFullYear(), 0, 1);
-        const days = Math.floor((date - startDate) / (24 * 60 * 60 * 1000));
-        return Math.ceil((days + startDate.getDay() + 1) / 7);
+    function getDaysUntilNextSunday() {
+        const today = new Date();
+        const dayOfWeek = today.getDay();
+        const daysUntilSunday = (7 - dayOfWeek) % 7;
+        return daysUntilSunday === 0 ? 7 : daysUntilSunday;
     }
 
     function updateCountdown() {
-        const today = new Date();
-        const weekNumber = getWeekNumber(today);
+        const daysUntilSunday = getDaysUntilNextSunday();
         const countdownElement = document.getElementById("countdown-number");
-        countdownElement.textContent = `الأسبوع ${weekNumber}`;
+        countdownElement.textContent = `${daysUntilSunday} يوم${daysUntilSunday === 1 ? '' : 'اً'}`;
     }
 
+    // Update countdown initially
     updateCountdown();
+
+    // Update countdown every hour
+    setInterval(updateCountdown, 3600000); // 3600000 milliseconds = 1 hour
 });
