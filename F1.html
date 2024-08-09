@@ -86,6 +86,12 @@
             color: white;
             cursor: pointer;
         }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -165,8 +171,14 @@
 
             if (!currentQuestion) {
                 currentQuestion = await fetchQuestion();
-                displayMessage(`*الـوقـت⏳↞ ${(timeout / 1000).toFixed(2)} ثـانـيـة*\n*الـجـائـزة💰↞ +${poin} ذهــب*\n> قم بالرد على الرسالة بالإجابة`);
                 
+                // عرض الصورة في الرسالة
+                let imageElement = document.createElement("img");
+                imageElement.src = currentQuestion.img; // تأكد من أن currentQuestion.img يحتوي على رابط صحيح
+                messagesContainer.appendChild(imageElement);
+
+                displayMessage(`*الـوقـت⏳↞ ${(timeout / 1000).toFixed(2)} ثـانـيـة*\n*الـجـائـزة💰↞ +${poin} ذهــب*\n> قم بالرد على الرسالة بالإجابة`);
+
                 timer = setTimeout(() => {
                     displayMessage(`انتهى الوقت! الإجابة الصحيحة هي: ${currentQuestion.name}`);
                     currentQuestion = null;
@@ -183,4 +195,4 @@
         }
     </script>
 </body>
-  </html> 
+</html>
