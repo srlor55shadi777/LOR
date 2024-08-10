@@ -1,42 +1,42 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const decreaseFontButton = document.getElementById('decrease-font');
-    const increaseFontButton = document.getElementById('increase-font');
-    const boldTextButton = document.getElementById('bold-text');
-    const colorTextButton = document.getElementById('color-text');
-    const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
-    const chapterContent = document.getElementById('chapterContent');
-    let currentFontSize = 18;
+document.addEventListener('DOMContentLoaded', function() {
+    const content = document.getElementById('chapterContent');
+    const increaseFontBtn = document.getElementById('increase-font');
+    const decreaseFontBtn = document.getElementById('decrease-font');
+    const boldTextBtn = document.getElementById('bold-text');
+    const colorTextBtn = document.getElementById('color-text');
+    const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
+    let currentFontSize = 16;
+    let isBold = false;
+    const maxFontSize = 28;
+    const minFontSize = 14;
+    const colors = ['#000', '#f00', '#0f0', '#00f', '#fff'];
+    let currentColorIndex = 0;
 
-    decreaseFontButton.addEventListener('click', function () {
-        if (currentFontSize > 14) {
-            currentFontSize -= 2;
-            chapterContent.style.fontSize = currentFontSize + 'px';
-        }
-    });
-
-    increaseFontButton.addEventListener('click', function () {
-        if (currentFontSize < 28) {
+    increaseFontBtn.addEventListener('click', () => {
+        if (currentFontSize < maxFontSize) {
             currentFontSize += 2;
-            chapterContent.style.fontSize = currentFontSize + 'px';
+            content.style.fontSize = `${currentFontSize}px`;
         }
     });
 
-    boldTextButton.addEventListener('click', function () {
-        if (chapterContent.style.fontWeight === 'bold') {
-            chapterContent.style.fontWeight = 'normal';
-        } else {
-            chapterContent.style.fontWeight = 'bold';
+    decreaseFontBtn.addEventListener('click', () => {
+        if (currentFontSize > minFontSize) {
+            currentFontSize -= 2;
+            content.style.fontSize = `${currentFontSize}px`;
         }
     });
 
-    colorTextButton.addEventListener('click', function () {
-        const colors = ['#000', '#007bff', '#ff0000', '#00ff00', '#ffff00'];
-        const currentColor = chapterContent.style.color;
-        const nextColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
-        chapterContent.style.color = nextColor;
+    boldTextBtn.addEventListener('click', () => {
+        isBold = !isBold;
+        content.style.fontWeight = isBold ? 'bold' : 'normal';
     });
 
-    toggleDarkModeButton.addEventListener('click', function () {
+    colorTextBtn.addEventListener('click', () => {
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        content.style.color = colors[currentColorIndex];
+    });
+
+    toggleDarkModeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
 });
