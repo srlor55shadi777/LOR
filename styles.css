@@ -1,0 +1,101 @@
+/* إعدادات أساسية لجسم الصفحة */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* تنسيق الرأس والتذييل */
+header, footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* تنسيق صندوق المحتوى الرئيسي */
+.container {
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    position: relative;
+}
+
+/* تنسيق عنوان الفصل */
+.chapter-header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.chapter-number {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.chapter-title {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* تنسيق محتوى الفصل */
+.chapter-content {
+    text-align: justify;
+    padding-top: 20px;
+}
+
+/* تنسيق أزرار التنقل */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.navigation-buttons a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.navigation-buttons a:hover {
+    background-color: #007bff;
+    color: white;
+}
