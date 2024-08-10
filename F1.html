@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <header>رأس الصفحة</header>
-    
     <div class="container">
         <div class="chapter-header">
             <div class="chapter-number">1</div>
@@ -20,12 +18,19 @@
             <p>استمتع بقراءة الفصل!</p>
         </div>
 
+        <div class="text-controls">
+            <button onclick="decreaseFontSize()">أصغر</button>
+            <button onclick="increaseFontSize()">أكبر</button>
+        </div>
+
         <div class="navigation-buttons">
-            <a href="#" id="prev-btn">السابق</a>
-            <a href="#" id="next-btn">التالي</a>
+            <a href="index.html" id="prev-btn">السابق</a>
+            <a href="chapter2.html" id="next-btn">التالي</a>
         </div>
     </div>
 
     <footer>تذييل الصفحة</footer>
+
+    <script src="chapter.js"></script>
 </body>
 </html>
