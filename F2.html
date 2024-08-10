@@ -3,34 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كتاب تفاعلي</title>
+    <title>كتاب تفاعلي ثلاثي الأبعاد</title>
     <!-- ربط ملف CSS -->
     <link rel="stylesheet" href="C1.css">
 </head>
 <body>
-    <div class="book">
-        <div class="page" id="page1">
-            <div class="content">
-                <h1>الفصل الأول</h1>
-                <p>هذا هو نص الفصل الأول من الكتاب...</p>
+    <div class="book-container">
+        <div class="book">
+            <div class="page" id="page1">
+                <div class="content">
+                    <h1>الفصل الأول</h1>
+                    <p>هذا هو نص الفصل الأول من الكتاب...</p>
+                </div>
+            </div>
+            <div class="page" id="page2">
+                <div class="content">
+                    <h1>الفصل الثاني</h1>
+                    <p>هذا هو نص الفصل الثاني من الكتاب...</p>
+                </div>
+            </div>
+            <div class="page" id="page3">
+                <div class="content">
+                    <h1>الفصل الثالث</h1>
+                    <p>هذا هو نص الفصل الثالث من الكتاب...</p>
+                </div>
             </div>
         </div>
-        <div class="page" id="page2">
-            <div class="content">
-                <h1>الفصل الثاني</h1>
-                <p>هذا هو نص الفصل الثاني من الكتاب...</p>
-            </div>
-        </div>
-        <div class="page" id="page3">
-            <div class="content">
-                <h1>الفصل الثالث</h1>
-                <p>هذا هو نص الفصل الثالث من الكتاب...</p>
-            </div>
+
+        <div class="controls">
+            <button id="prevBtn">السابق</button>
+            <button id="nextBtn">التالي</button>
         </div>
     </div>
-
-    <button id="prevBtn">السابق</button>
-    <button id="nextBtn">التالي</button>
 
     <!-- ربط ملف JavaScript -->
     <script src="C1.js"></script>
