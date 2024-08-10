@@ -50,6 +50,7 @@ body.dark-mode .header {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
+    border: none; /* إزالة الحد الأزرق */
 }
 
 /* تأثيرات الوضع الليلي على المربع */
@@ -67,7 +68,7 @@ body.dark-mode .header-box {
     border-radius: 50%;
     text-align: center;
     font-size: 24px;
-    margin-right: 20px; /* زيادة الفراغ بين الدائرة والعنوان */
+    margin-right: 15px; /* زيادة الفراغ بين الدائرة والعنوان */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
 }
@@ -147,4 +148,4 @@ body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button 
 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
-}
+    }
