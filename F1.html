@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عرض الفصل</title>
-    <!-- ربط ملف CSS -->
+    <title>عرض فصل رواية</title>
     <link rel="stylesheet" href="C1.css">
 </head>
 <body>
-    <div class="book-page">
-        <header class="chapter-info">
-            <h2 id="chapter-title">عنوان الرواية</h2>
-            <p id="chapter-number">الفصل: 1</p>
-        </header>
-        
-        <div class="chapter-content">
-            <p id="chapter-text">
-                <!-- سيتم تعبئة النص من ملف JavaScript -->
-            </p>
-        </div>
 
-        <footer class="controls">
-            <button id="prevBtn">السابق</button>
-            <button id="nextBtn">التالي</button>
-        </footer>
+<div class="container">
+    <div class="chapter-header">
+        <div class="chapter-number">1</div>
+        <div class="chapter-title">عنوان الفصل</div>
     </div>
 
-    <!-- ربط ملف JavaScript -->
-    <script src="C1.js"></script>
+    <div class="chapter-content">
+        <p>
+            هنا يكون نص الفصل. يمكنك إضافة أي نص ترغب فيه هنا.
+            يجب أن يكون النص مرتباً ومنسقاً بشكل جيد ليشبه النصوص الموجودة في الكتب.
+        </p>
+        <p>
+            استمتع بقراءة الفصل!
+        </p>
+    </div>
+
+    <div class="navigation-buttons">
+        <a href="#" id="prev-btn">السابق</a>
+        <a href="#" id="next-btn">التالي</a>
+    </div>
+</div>
+
+<script src="C1.js"></script>
 </body>
 </html>
