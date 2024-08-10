@@ -1,18 +1,18 @@
 // تحديد الفصول المتاحة
 const chapters = [
     {
-        title: "الفصل الأول",
-        number: "1",
+        title: "عنوان الرواية",
+        chapter: "الفصل: 1",
         text: "هذا هو نص الفصل الأول من الرواية..."
     },
     {
-        title: "الفصل الثاني",
-        number: "2",
+        title: "عنوان الرواية",
+        chapter: "الفصل: 2",
         text: "هذا هو نص الفصل الثاني من الرواية..."
     },
     {
-        title: "الفصل الثالث",
-        number: "3",
+        title: "عنوان الرواية",
+        chapter: "الفصل: 3",
         text: "هذا هو نص الفصل الثالث من الرواية..."
     }
     // يمكنك إضافة المزيد من الفصول هنا
@@ -27,7 +27,7 @@ function updateChapter() {
     const textElement = document.getElementById("chapter-text");
 
     titleElement.textContent = chapters[currentChapter].title;
-    numberElement.textContent = "رقم الفصل: " + chapters[currentChapter].number;
+    numberElement.textContent = chapters[currentChapter].chapter;
     textElement.textContent = chapters[currentChapter].text;
 
     document.getElementById("prevBtn").disabled = currentChapter === 0;
