@@ -94,7 +94,7 @@ body.dark-mode .chapter-title {
 }
 
 .navigation-buttons a, .navigation-buttons button {
-    background: none;
+    background: none; /* إزالة الخلفية */
     border: none;
     font-size: 24px;
     cursor: pointer;
@@ -112,26 +112,4 @@ body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button 
 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
-}
-
-/* تنسيق أزرار الانتقال للفصل التالي والسابق */
-.navigation-buttons a {
-    font-size: 30px;
-    border-radius: 50%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-.navigation-buttons a:hover {
-    background-color: #0056b3;
-}
-
-body.dark-mode .navigation-buttons a {
-    background-color: #0056b3;
-}
-
-body.dark-mode .navigation-buttons a:hover {
-    background-color: #003f7f;
 }
