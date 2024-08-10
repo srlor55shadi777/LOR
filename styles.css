@@ -51,6 +51,8 @@ body.dark-mode .header {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, border-color 0.3s;
+    margin: 0 auto; /* توسيط المربع */
+    width: fit-content; /* عرض تلقائي للمربع */
 }
 
 /* تأثيرات الوضع الليلي على المربع */
@@ -96,7 +98,7 @@ body.dark-mode .chapter-title {
 /* تنسيق محتوى الفصل */
 .chapter-content {
     text-align: justify;
-    padding-top: 100px; /* مساحة لتجنب تداخل مع الرأس الثابت */
+    padding-top: 120px; /* مساحة لتجنب تداخل مع الرأس الثابت */
     flex-grow: 1;
 }
 
