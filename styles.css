@@ -9,6 +9,13 @@ body {
     flex-direction: column;
     min-height: 100vh;
     direction: rtl; /* نص من اليمين لليسار */
+    transition: background-color 0.3s, color 0.3s; /* انتقال سلس للوضع الليلي */
+}
+
+/* إعدادات الوضع الليلي */
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
 }
 
 /* إزالة الرأس والتذييل */
@@ -32,6 +39,12 @@ footer {
     display: flex;
     flex-direction: column;
     position: relative;
+    transition: background-color 0.3s; /* انتقال سلس للوضع الليلي */
+}
+
+/* إعدادات الوضع الليلي لصندوق المحتوى */
+body.dark-mode .container {
+    background-color: #444;
 }
 
 /* تنسيق عنوان الفصل */
@@ -52,12 +65,24 @@ footer {
     font-size: 28px;
     margin-left: 20px; /* نقل الدائرة إلى اليسار */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل لتحسين الشكل */
+    transition: background-color 0.3s; /* انتقال سلس للوضع الليلي */
+}
+
+/* إعدادات الوضع الليلي للدائرة */
+body.dark-mode .chapter-number {
+    background-color: #0056b3;
 }
 
 .chapter-title {
     font-size: 24px;
     color: #007bff;
     font-weight: bold;
+    transition: color 0.3s; /* انتقال سلس للوضع الليلي */
+}
+
+/* إعدادات الوضع الليلي لعنوان الفصل */
+body.dark-mode .chapter-title {
+    color: #bbd1ff;
 }
 
 /* تنسيق محتوى الفصل */
@@ -66,45 +91,33 @@ footer {
     padding-top: 20px;
 }
 
-/* تنسيق أزرار تحكم النص */
-.text-controls {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.text-controls button {
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.text-controls button:hover {
-    background-color: #0056b3;
-}
-
-/* تنسيق أزرار التنقل */
+/* تنسيق أزرار التحكم والتنقل */
 .navigation-buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* توسيط الأيقونات عمودياً */
+    justify-content: center;
+    align-items: center;
     margin-top: 30px;
+    gap: 10px; /* مسافة بين الأزرار */
 }
 
-.navigation-buttons a {
-    text-decoration: none;
+.navigation-buttons a, .navigation-buttons button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
     color: #007bff;
-    font-size: 24px; /* حجم الأيقونات */
-    margin: 0 15px; /* مساحة بين الأيقونات */
     transition: color 0.3s;
 }
 
-.navigation-buttons a:hover {
+.navigation-buttons a:hover, .navigation-buttons button:hover {
     color: #0056b3;
+}
+
+/* إعدادات الوضع الليلي للأيقونات */
+body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button {
+    color: #bbd1ff;
+}
+
+body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
+    color: #8899cc;
 }
