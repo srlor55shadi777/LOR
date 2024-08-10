@@ -37,13 +37,23 @@ body.dark-mode .container {
     background-color: #444;
 }
 
-/* تنسيق عنوان الفصل */
-.chapter-header {
+/* تثبيت رأس الفصل */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
 }
 
+/* تنسيق رقم الفصل */
 .chapter-number {
     width: 80px;
     height: 80px;
@@ -58,25 +68,19 @@ body.dark-mode .container {
     transition: background-color 0.3s;
 }
 
-body.dark-mode .chapter-number {
-    background-color: #0056b3;
-}
-
+/* تنسيق عنوان الفصل */
 .chapter-title {
     font-size: 24px;
     color: #007bff;
     font-weight: bold;
+    margin-left: 20px;
     transition: color 0.3s;
-}
-
-body.dark-mode .chapter-title {
-    color: #bbd1ff;
 }
 
 /* تنسيق محتوى الفصل */
 .chapter-content {
     text-align: justify;
-    padding-top: 20px;
+    padding-top: 100px; /* مساحة لتجنب تداخل مع الرأس الثابت */
     flex-grow: 1;
 }
 
@@ -119,4 +123,4 @@ body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button 
 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
-    }
+}
