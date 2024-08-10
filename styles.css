@@ -29,7 +29,6 @@ body.dark-mode {
     z-index: 1000;
     padding: 10px;
     margin: 0;
-    border-bottom: none; /* إزالة الخط الفاصل */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,13 +46,13 @@ body.dark-mode .header {
     display: flex;
     align-items: center;
     border-radius: 12px;
-    padding: 10px 20px;
+    padding: 5px 15px; /* تم تقليل حجم المربع */
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     border: none; /* إزالة الحد الأزرق */
-    flex: 1;
     text-align: center;
+    max-width: 50%; /* لجعل المربع في المنتصف */
 }
 
 /* تأثيرات الوضع الليلي على المربع */
@@ -63,7 +62,7 @@ body.dark-mode .header-box {
 
 /* تنسيق عنوان الفصل */
 .chapter-title {
-    font-size: 20px;
+    font-size: 18px;
     color: #007bff;
     font-weight: bold;
     margin: 0;
@@ -133,4 +132,4 @@ body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button 
 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
-    }
+}
