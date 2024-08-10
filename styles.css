@@ -32,7 +32,7 @@ body.dark-mode {
     border-bottom: none; /* إزالة الخط الفاصل */
     display: flex;
     align-items: center;
-    gap: 20px; /* المسافة بين الدائرة والمربع */
+    justify-content: center;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -59,26 +59,6 @@ body.dark-mode .header {
 /* تأثيرات الوضع الليلي على المربع */
 body.dark-mode .header-box {
     background-color: #555;
-}
-
-/* تنسيق رقم الفصل */
-.chapter-number {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 24px;
-    position: relative; /* وضع الدائرة داخل الرأس */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-}
-
-/* تأثيرات الوضع الليلي على الرقم */
-body.dark-mode .chapter-number {
-    background-color: #0056b3;
 }
 
 /* تنسيق عنوان الفصل */
