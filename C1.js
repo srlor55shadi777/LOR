@@ -21,8 +21,8 @@ nextBtn.addEventListener('click', () => {
 });
 
 function updateButtons() {
-    prevBtn.classList.toggle('hidden', currentPage === 1);
-    nextBtn.classList.toggle('hidden', currentPage === pages.length);
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === pages.length;
 }
 
 updateButtons();
