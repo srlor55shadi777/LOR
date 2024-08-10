@@ -29,7 +29,8 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: flex-start; /* محاذاة العناصر إلى الأعلى */
+    flex-direction: column; /* محاذاة العناصر عموديًا */
+    position: relative;
 }
 
 /* تنسيق عنوان الفصل */
@@ -64,30 +65,7 @@ footer {
     padding-top: 20px;
 }
 
-/* تنسيق أزرار التنقل */
-.navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.navigation-buttons a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-}
-
-.navigation-buttons a:hover {
-    background-color: #007bff;
-    color: white;
-}
-
-/* أزرار تحكم النص */
+/* تنسيق أزرار تحكم النص */
 .text-controls {
     display: flex;
     justify-content: center;
@@ -108,4 +86,23 @@ footer {
 
 .text-controls button:hover {
     background-color: #0056b3;
+}
+
+/* تنسيق أزرار التنقل */
+.navigation-buttons {
+    display: flex;
+    justify-content: center; /* توسيط الأزرار */
+    margin-top: 30px;
+}
+
+.navigation-buttons a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 24px; /* حجم الأيقونة */
+    margin: 0 15px; /* مساحة بين الأيقونات */
+    transition: color 0.3s;
+}
+
+.navigation-buttons a:hover {
+    color: #0056b3;
 }
