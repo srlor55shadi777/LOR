@@ -1,28 +1,55 @@
-let currentPage = 1;
-
-const pages = document.querySelectorAll('.page');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-prevBtn.addEventListener('click', () => {
-    if (currentPage > 1) {
-        pages[currentPage - 2].style.transform = 'rotateY(0deg)';
-        currentPage--;
+// تحديد الفصول المتاحة
+const chapters = [
+    {
+        title: "الفصل الأول",
+        number: "1",
+        text: "هذا هو نص الفصل الأول من الرواية..."
+    },
+    {
+        title: "الفصل الثاني",
+        number: "2",
+        text: "هذا هو نص الفصل الثاني من الرواية..."
+    },
+    {
+        title: "الفصل الثالث",
+        number: "3",
+        text: "هذا هو نص الفصل الثالث من الرواية..."
     }
-    updateButtons();
-});
+    // يمكنك إضافة المزيد من الفصول هنا
+];
 
-nextBtn.addEventListener('click', () => {
-    if (currentPage < pages.length) {
-        pages[currentPage - 1].style.transform = 'rotateY(-180deg)';
-        currentPage++;
-    }
-    updateButtons();
-});
+let currentChapter = 0;
 
-function updateButtons() {
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = currentPage === pages.length;
+// تحديث محتوى الصفحة بناءً على الفصل الحالي
+function updateChapter() {
+    const titleElement = document.getElementById("chapter-title");
+    const numberElement = document.getElementById("chapter-number");
+    const textElement = document.getElementById("chapter-text");
+
+    titleElement.textContent = chapters[currentChapter].title;
+    numberElement.textContent = "رقم الفصل: " + chapters[currentChapter].number;
+    textElement.textContent = chapters[currentChapter].text;
+
+    document.getElementById("prevBtn").disabled = currentChapter === 0;
+    document.getElementById("nextBtn").disabled = currentChapter === chapters.length - 1;
 }
 
-updateButtons();
+// التعامل مع أزرار التالي والسابق
+document.getElementById("prevBtn").addEventListener("click", () => {
+    if (currentChapter > 0) {
+        currentChapter--;
+        updateChapter();
+    }
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+    if (currentChapter < chapters.length - 1) {
+        currentChapter++;
+        updateChapter();
+        // تحديث الرابط لزر "التالي" حسب الصفحة
+        window.location.href = `F${currentChapter + 2}.html`;
+    }
+});
+
+// تهيئة الصفحة عند التحميل
+updateChapter();
