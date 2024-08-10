@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.fa-search-plus').addEventListener('click', increaseFontSize);
     document.querySelector('.fa-search-minus').addEventListener('click', decreaseFontSize);
     document.querySelector('.fa-bold').addEventListener('click', toggleBoldText);
-    document.querySelector('.fa-palette').addEventListener('click', changeTextColor);
+    document.querySelector('.fa-tachometer-alt').addEventListener('click', changeTextColor); // تحديث لزر تغيير اللون
     document.querySelector('.fa-moon').addEventListener('click', toggleDarkMode);
 });
 
