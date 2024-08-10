@@ -28,10 +28,10 @@ body.dark-mode {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     display: flex;
-    justify-content: center; /* توسيط الرأس */
+    justify-content: center;
     padding: 10px;
     margin: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: none; /* إزالة الخط الفاصل */
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -68,7 +68,7 @@ body.dark-mode .header-box {
     border-radius: 50%;
     text-align: center;
     font-size: 24px;
-    margin-right: 15px; /* زيادة الفراغ بين الدائرة والعنوان */
+    margin-right: 20px; /* زيادة الفراغ بين الدائرة والعنوان */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
 }
@@ -148,4 +148,4 @@ body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button 
 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
-    }
+}
