@@ -18,11 +18,6 @@ body.dark-mode {
     color: #f5f5f5;
 }
 
-/* إزالة الرأس والتذييل */
-header, footer {
-    display: none;
-}
-
 /* تنسيق صندوق المحتوى الرئيسي */
 .container {
     width: 80%;
@@ -34,7 +29,7 @@ header, footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    position: relative;
+    flex-grow: 1;
     transition: background-color 0.3s;
 }
 
@@ -82,6 +77,7 @@ body.dark-mode .chapter-title {
 .chapter-content {
     text-align: justify;
     padding-top: 20px;
+    flex-grow: 1;
 }
 
 /* تنسيق أزرار التحكم والتنقل */
@@ -89,8 +85,16 @@ body.dark-mode .chapter-title {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
     gap: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .navigation-buttons {
+    background-color: #444;
+    box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
 }
 
 .navigation-buttons a, .navigation-buttons button {
@@ -113,3 +117,8 @@ body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
 }
+
+/* وضع الأزرار في أسفل الصفحة */
+footer {
+    margin-top: auto;
+    }
