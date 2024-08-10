@@ -1,3 +1,4 @@
+// JavaScript بدون تغيير
 document.getElementById('prev-btn').addEventListener('click', function(event) {
     event.preventDefault();
     // اضف هنا الأكشن الذي تريده عند الضغط على "السابق"
