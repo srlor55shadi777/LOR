@@ -8,23 +8,19 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    direction: rtl; /* نص من اليمين لليسار */
-    transition: background-color 0.3s, color 0.3s; /* انتقال سلس للوضع الليلي */
+    direction: rtl;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* إعدادات الوضع الليلي */
+/* الوضع الليلي */
 body.dark-mode {
     background-color: #333;
     color: #f5f5f5;
 }
 
 /* إزالة الرأس والتذييل */
-header {
-    display: none; /* إخفاء الرأس */
-}
-
-footer {
-    display: none; /* إخفاء التذييل */
+header, footer {
+    display: none;
 }
 
 /* تنسيق صندوق المحتوى الرئيسي */
@@ -39,10 +35,9 @@ footer {
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: background-color 0.3s; /* انتقال سلس للوضع الليلي */
+    transition: background-color 0.3s;
 }
 
-/* إعدادات الوضع الليلي لصندوق المحتوى */
 body.dark-mode .container {
     background-color: #444;
 }
@@ -63,12 +58,11 @@ body.dark-mode .container {
     border-radius: 50%;
     text-align: center;
     font-size: 28px;
-    margin-left: 20px; /* نقل الدائرة إلى اليسار */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل لتحسين الشكل */
-    transition: background-color 0.3s; /* انتقال سلس للوضع الليلي */
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
 }
 
-/* إعدادات الوضع الليلي للدائرة */
 body.dark-mode .chapter-number {
     background-color: #0056b3;
 }
@@ -77,10 +71,9 @@ body.dark-mode .chapter-number {
     font-size: 24px;
     color: #007bff;
     font-weight: bold;
-    transition: color 0.3s; /* انتقال سلس للوضع الليلي */
+    transition: color 0.3s;
 }
 
-/* إعدادات الوضع الليلي لعنوان الفصل */
 body.dark-mode .chapter-title {
     color: #bbd1ff;
 }
@@ -97,7 +90,7 @@ body.dark-mode .chapter-title {
     justify-content: center;
     align-items: center;
     margin-top: 30px;
-    gap: 10px; /* مسافة بين الأزرار */
+    gap: 10px;
 }
 
 .navigation-buttons a, .navigation-buttons button {
@@ -113,11 +106,32 @@ body.dark-mode .chapter-title {
     color: #0056b3;
 }
 
-/* إعدادات الوضع الليلي للأيقونات */
 body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button {
     color: #bbd1ff;
 }
 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
-    }
+}
+
+/* تنسيق أزرار الانتقال للفصل التالي والسابق */
+.navigation-buttons a {
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.navigation-buttons a:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode .navigation-buttons a {
+    background-color: #0056b3;
+}
+
+body.dark-mode .navigation-buttons a:hover {
+    background-color: #003f7f;
+}
