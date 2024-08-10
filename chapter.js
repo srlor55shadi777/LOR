@@ -1,59 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // إضافة أحداث النقر على الأزرار
-    document.getElementById('prev-btn').addEventListener('click', () => {
-        window.location.href = 'chapter2.html';
+document.addEventListener('DOMContentLoaded', function () {
+    const decreaseFontButton = document.getElementById('decrease-font');
+    const increaseFontButton = document.getElementById('increase-font');
+    const boldTextButton = document.getElementById('bold-text');
+    const colorTextButton = document.getElementById('color-text');
+    const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+    const chapterContent = document.getElementById('chapterContent');
+    let currentFontSize = 18;
+
+    decreaseFontButton.addEventListener('click', function () {
+        if (currentFontSize > 14) {
+            currentFontSize -= 2;
+            chapterContent.style.fontSize = currentFontSize + 'px';
+        }
     });
 
-    document.getElementById('next-btn').addEventListener('click', () => {
-        window.location.href = 'index.html';
+    increaseFontButton.addEventListener('click', function () {
+        if (currentFontSize < 28) {
+            currentFontSize += 2;
+            chapterContent.style.fontSize = currentFontSize + 'px';
+        }
     });
 
-    document.querySelector('.fa-search-plus').addEventListener('click', increaseFontSize);
-    document.querySelector('.fa-search-minus').addEventListener('click', decreaseFontSize);
-    document.querySelector('.fa-bold').addEventListener('click', toggleBoldText);
-    document.querySelector('.fa-tachometer-alt').addEventListener('click', changeTextColor); // تحديث لزر تغيير اللون
-    document.querySelector('.fa-moon').addEventListener('click', toggleDarkMode);
+    boldTextButton.addEventListener('click', function () {
+        if (chapterContent.style.fontWeight === 'bold') {
+            chapterContent.style.fontWeight = 'normal';
+        } else {
+            chapterContent.style.fontWeight = 'bold';
+        }
+    });
+
+    colorTextButton.addEventListener('click', function () {
+        const colors = ['#000', '#007bff', '#ff0000', '#00ff00', '#ffff00'];
+        const currentColor = chapterContent.style.color;
+        const nextColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
+        chapterContent.style.color = nextColor;
+    });
+
+    toggleDarkModeButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+    });
 });
-
-// زيادة حجم الخط
-function increaseFontSize() {
-    const content = document.querySelector('.chapter-content');
-    const style = window.getComputedStyle(content, null).getPropertyValue('font-size');
-    const fontSize = parseFloat(style);
-
-    if (fontSize < 32) { // الحد الأقصى لحجم الخط
-        content.style.fontSize = (fontSize + 2) + 'px';
-    }
-}
-
-// تقليل حجم الخط
-function decreaseFontSize() {
-    const content = document.querySelector('.chapter-content');
-    const style = window.getComputedStyle(content, null).getPropertyValue('font-size');
-    const fontSize = parseFloat(style);
-
-    if (fontSize > 12) { // الحد الأدنى لحجم الخط
-        content.style.fontSize = (fontSize - 2) + 'px';
-    }
-}
-
-// التبديل بين النصوص العادية والمسمّكة
-function toggleBoldText() {
-    const content = document.getElementById('chapterContent');
-    content.style.fontWeight = content.style.fontWeight === 'bold' ? 'normal' : 'bold';
-}
-
-// تبديل الألوان
-let colorIndex = 0;
-const colors = ['black', 'blue', 'red', 'green', 'lightgray', 'white'];
-
-function changeTextColor() {
-    const content = document.getElementById('chapterContent');
-    colorIndex = (colorIndex + 1) % colors.length;
-    content.style.color = colors[colorIndex];
-}
-
-// التبديل بين الوضع النهاري والليلي
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-}
