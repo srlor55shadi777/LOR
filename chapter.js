@@ -39,11 +39,13 @@ function toggleBoldText() {
     content.style.fontWeight = content.style.fontWeight === 'bold' ? 'normal' : 'bold';
 }
 
+let colorIndex = 0;
+const colors = ['black', 'blue', 'red', 'green', 'lightgray', 'white'];
+
 function changeTextColor() {
     const content = document.getElementById('chapterContent');
-    const currentColor = window.getComputedStyle(content).color;
-    const newColor = currentColor === 'rgb(0, 0, 0)' ? 'blue' : 'black';
-    content.style.color = newColor;
+    colorIndex = (colorIndex + 1) % colors.length;
+    content.style.color = colors[colorIndex];
 }
 
 function toggleDarkMode() {
