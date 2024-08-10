@@ -39,4 +39,19 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleDarkModeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
+    
+    // زر جديد للتنقل بين الفصول
+    const navigateChaptersBtn = document.createElement('button');
+    navigateChaptersBtn.textContent = 'التنقل بين الفصول';
+    navigateChaptersBtn.style.position = 'fixed';
+    navigateChaptersBtn.style.bottom = '70px';
+    navigateChaptersBtn.style.right = '20px';
+    navigateChaptersBtn.style.padding = '10px 20px';
+    navigateChaptersBtn.style.fontSize = '16px';
+    navigateChaptersBtn.style.cursor = 'pointer';
+    document.body.appendChild(navigateChaptersBtn);
+
+    navigateChaptersBtn.addEventListener('click', () => {
+        window.location.href = 'index.html'; // نقل المستخدم إلى الصفحة الرئيسية لاختيار فصل آخر
+    });
 });
