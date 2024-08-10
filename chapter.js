@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colors = ['#000', '#f00', '#0f0', '#00f', '#fff'];
     let currentColorIndex = 0;
 
+    // تكبير الخط
     increaseFontBtn.addEventListener('click', () => {
         if (currentFontSize < maxFontSize) {
             currentFontSize += 2;
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // تصغير الخط
     decreaseFontBtn.addEventListener('click', () => {
         if (currentFontSize > minFontSize) {
             currentFontSize -= 2;
@@ -26,20 +28,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // تعديل النص ليصبح عريضًا أو طبيعيًا
     boldTextBtn.addEventListener('click', () => {
         isBold = !isBold;
         content.style.fontWeight = isBold ? 'bold' : 'normal';
     });
 
+    // تغيير لون النص
     colorTextBtn.addEventListener('click', () => {
         currentColorIndex = (currentColorIndex + 1) % colors.length;
         content.style.color = colors[currentColorIndex];
     });
 
+    // تفعيل أو إلغاء الوضع الليلي
     toggleDarkModeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
-    
+
+    // ترتيب الأزرار في الأسفل مع وضع التأثيرات المطلوبة
+    const navigationBtns = document.querySelectorAll('.navigation-buttons button');
+    navigationBtns.forEach(button => {
+        button.style.position = 'fixed';
+        button.style.bottom = '20px';
+        button.style.padding = '10px 20px';
+        button.style.fontSize = '16px';
+        button.style.cursor = 'pointer';
+        button.style.transition = 'all 0.3s ease';
+
+        button.addEventListener('mouseover', () => {
+            button.style.transform = 'scale(1.1)';
+        });
+
+        button.addEventListener('mouseout', () => {
+            button.style.transform = 'scale(1)';
+        });
+    });
+
     // زر جديد للتنقل بين الفصول
     const navigateChaptersBtn = document.createElement('button');
     navigateChaptersBtn.textContent = 'التنقل بين الفصول';
