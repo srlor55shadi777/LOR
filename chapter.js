@@ -11,3 +11,7 @@ function decreaseFontSize() {
     const fontSize = parseFloat(style);
     content.style.fontSize = (fontSize - 2) + 'px';
 }
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
