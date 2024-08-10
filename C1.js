@@ -1,55 +1,11 @@
-// تحديد الفصول المتاحة
-const chapters = [
-    {
-        title: "عنوان الرواية",
-        chapter: "الفصل: 1",
-        text: "هذا هو نص الفصل الأول من الرواية..."
-    },
-    {
-        title: "عنوان الرواية",
-        chapter: "الفصل: 2",
-        text: "هذا هو نص الفصل الثاني من الرواية..."
-    },
-    {
-        title: "عنوان الرواية",
-        chapter: "الفصل: 3",
-        text: "هذا هو نص الفصل الثالث من الرواية..."
-    }
-    // يمكنك إضافة المزيد من الفصول هنا
-];
-
-let currentChapter = 0;
-
-// تحديث محتوى الصفحة بناءً على الفصل الحالي
-function updateChapter() {
-    const titleElement = document.getElementById("chapter-title");
-    const numberElement = document.getElementById("chapter-number");
-    const textElement = document.getElementById("chapter-text");
-
-    titleElement.textContent = chapters[currentChapter].title;
-    numberElement.textContent = chapters[currentChapter].chapter;
-    textElement.textContent = chapters[currentChapter].text;
-
-    document.getElementById("prevBtn").disabled = currentChapter === 0;
-    document.getElementById("nextBtn").disabled = currentChapter === chapters.length - 1;
-}
-
-// التعامل مع أزرار التالي والسابق
-document.getElementById("prevBtn").addEventListener("click", () => {
-    if (currentChapter > 0) {
-        currentChapter--;
-        updateChapter();
-    }
+document.getElementById('prev-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    // اضف هنا الأكشن الذي تريده عند الضغط على "السابق"
+    alert('تم الضغط على "السابق"');
 });
 
-document.getElementById("nextBtn").addEventListener("click", () => {
-    if (currentChapter < chapters.length - 1) {
-        currentChapter++;
-        updateChapter();
-        // تحديث الرابط لزر "التالي" حسب الصفحة
-        window.location.href = `F${currentChapter + 2}.html`;
-    }
+document.getElementById('next-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    // اضف هنا الأكشن الذي تريده عند الضغط على "التالي"
+    alert('تم الضغط على "التالي"');
 });
-
-// تهيئة الصفحة عند التحميل
-updateChapter();
