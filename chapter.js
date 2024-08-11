@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // إضافة تأثير القفز التدريجي للأيقونات
-    const icons = document.querySelectorAll('.icon');
+    const icons = document.querySelectorAll('.navigation-buttons i');
     icons.forEach((icon, index) => {
         icon.style.animation = `bounceIn 0.5s ease-in-out forwards`;
         icon.style.animationDelay = `${index * 0.1}s`;
