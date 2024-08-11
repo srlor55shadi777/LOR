@@ -94,96 +94,6 @@ body.dark-mode .chapter-content {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
-/* تأثير القفز التدريجي */
-@keyframes bounceIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* تنسيق أزرار التحكم والتنقل */
-.navigation-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    /* تأخير ظهور الأيقونات */
-    animation: bounceIn 0.5s ease forwards;
-}
-
-/* تأثيرات الوضع الليلي على أزرار التحكم والتنقل */
-body.dark-mode .navigation-buttons {
-    background-color: #444;
-    box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
-}
-
-.navigation-buttons a, .navigation-buttons button {
-    background: none; /* إزالة الخلفية */
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #007bff;
-    transition: color 0.3s;
-    animation: bounceIn 0.5s ease forwards; /* تطبيق تأثير القفز */
-}
-
-.navigation-buttons a:hover, .navigation-buttons button:hover {
-    color: #0056b3;
-}
-
-body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button {
-    color: #bbd1ff;
-}
-
-body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
-    color: #8899cc;
-}
-
-/* تنسيق الأزرار لتغيير حجم الخط ولونه */
-.font-size-button, .font-color-button, .line-spacing-button, .search-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #007bff;
-    transition: color 0.3s;
-}
-
-.font-size-button:hover, .font-color-button:hover, .line-spacing-button:hover, .search-button:hover {
-    color: #0056b3;
-}
-
-body.dark-mode .font-size-button, body.dark-mode .font-color-button, body.dark-mode .line-spacing-button, body.dark-mode .search-button {
-    color: #bbd1ff;
-}
-
-body.dark-mode .font-size-button:hover, body.dark-mode .font-color-button:hover, body.dark-mode .line-spacing-button:hover, body.dark-mode .search-button:hover {
-    color: #8899cc;
-}
-
-/* تنسيق البحث عن الكلمات */
-mark {
-    background-color: yellow;
-    color: black;
-    border-radius: 3px;
-}
-
 /* تنسيق أزرار التحكم والتنقل */
 .navigation-buttons {
     display: flex;
@@ -223,3 +133,56 @@ body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button 
 body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
     color: #8899cc;
 }
+
+/* تنسيق نافذة البحث المنبثقة */
+.search-popup {
+    display: none; /* المخفي افتراضيًا */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.search-popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.search-popup-content input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-popup-content button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-popup-content button:hover {
+    background-color: #0056b3;
+}
+
+.close-search-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    }
