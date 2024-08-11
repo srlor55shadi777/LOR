@@ -4,78 +4,98 @@ document.addEventListener('DOMContentLoaded', function() {
     const decreaseFontBtn = document.getElementById('decrease-font');
     const boldTextBtn = document.getElementById('bold-text');
     const colorTextBtn = document.getElementById('color-text');
-    const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
-    const searchTextBtn = document.getElementById('search-text');
     const lineSpacingBtn = document.getElementById('line-spacing');
-    let currentFontSize = parseInt(localStorage.getItem('fontSize')) || 16;
-    let isBold = localStorage.getItem('isBold') === 'true';
-    let currentLineSpacing = parseFloat(localStorage.getItem('lineSpacing')) || 1.5;
-    const maxFontSize = 28;
-    const minFontSize = 14;
-    const colors = ['#000', '#f00', '#0f0', '#00f', '#fff'];
-    let currentColorIndex = parseInt(localStorage.getItem('colorIndex')) || 0;
-    let searchKeyword = localStorage.getItem('searchKeyword') || '';
+    const searchPopup = document.getElementById('search-popup');
+    const closeSearchPopup = document.getElementById('close-search-popup');
+    const searchInput = document.getElementById('search-input');
+    const searchSubmit = document.getElementById('search-submit');
+    const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
 
-    content.style.fontSize = `${currentFontSize}px`;
-    content.style.fontWeight = isBold ? 'bold' : 'normal';
-    content.style.color = colors[currentColorIndex];
-    content.style.lineHeight = `${currentLineSpacing}`;
+    let fontSize = 16;
+    let lineHeight = 1.5;
+    const maxLineHeight = 3;
 
+    // Initialize font size and line height
+    content.style.fontSize = fontSize + 'px';
+    content.style.lineHeight = lineHeight;
+
+    // Increase font size
     increaseFontBtn.addEventListener('click', () => {
-        if (currentFontSize < maxFontSize) {
-            currentFontSize += 2;
-            content.style.fontSize = `${currentFontSize}px`;
-            localStorage.setItem('fontSize', currentFontSize);
-        }
+        fontSize += 2;
+        content.style.fontSize = fontSize + 'px';
     });
 
+    // Decrease font size
     decreaseFontBtn.addEventListener('click', () => {
-        if (currentFontSize > minFontSize) {
-            currentFontSize -= 2;
-            content.style.fontSize = `${currentFontSize}px`;
-            localStorage.setItem('fontSize', currentFontSize);
-        }
+        fontSize = Math.max(12, fontSize - 2); // Minimum font size
+        content.style.fontSize = fontSize + 'px';
     });
 
+    // Toggle bold text
     boldTextBtn.addEventListener('click', () => {
-        isBold = !isBold;
-        content.style.fontWeight = isBold ? 'bold' : 'normal';
-        localStorage.setItem('isBold', isBold);
+        content.style.fontWeight = content.style.fontWeight === 'bold' ? 'normal' : 'bold';
     });
 
+    // Toggle text color
     colorTextBtn.addEventListener('click', () => {
-        currentColorIndex = (currentColorIndex + 1) % colors.length;
-        content.style.color = colors[currentColorIndex];
-        localStorage.setItem('colorIndex', currentColorIndex);
-    });
-
-    lineSpacingBtn.addEventListener('click', () => {
-        currentLineSpacing += 0.1;
-        if (currentLineSpacing > 2) currentLineSpacing = 1.5; // الحد الأقصى للتباعد بين الأسطر
-        content.style.lineHeight = `${currentLineSpacing}`;
-        localStorage.setItem('lineSpacing', currentLineSpacing);
-    });
-
-    searchTextBtn.addEventListener('click', () => {
-        const keyword = prompt('ابحث عن كلمة:');
-        if (keyword) {
-            searchKeyword = keyword;
-            localStorage.setItem('searchKeyword', searchKeyword);
-            applySearchHighlight(searchKeyword);
+        const color = prompt('Enter a color (name or hex code):', '#000000');
+        if (color) {
+            content.style.color = color;
         }
     });
 
+    // Adjust line spacing
+    lineSpacingBtn.addEventListener('click', () => {
+        lineHeight = lineHeight < maxLineHeight ? lineHeight + 0.2 : 1.5;
+        content.style.lineHeight = lineHeight;
+    });
+
+    // Search text functionality
+    searchSubmit.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        if (query) {
+            const regex = new RegExp(query, 'gi');
+            content.innerHTML = content.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
+        }
+    });
+
+    // Open and close search popup
+    document.getElementById('search-text').addEventListener('click', () => {
+        searchPopup.style.display = 'flex';
+    });
+
+    closeSearchPopup.addEventListener('click', () => {
+        searchPopup.style.display = 'none';
+    });
+
+    // Toggle dark mode
     toggleDarkModeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
 
-    // إذا كان هناك كلمة محفوظة في التخزين المحلي، ابحث عنها عند تحميل الصفحة
-    if (searchKeyword) {
-        applySearchHighlight(searchKeyword);
+    // Initialize saved settings from local storage
+    const savedFontSize = localStorage.getItem('fontSize');
+    const savedLineHeight = localStorage.getItem('lineHeight');
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    if (savedFontSize) {
+        fontSize = parseInt(savedFontSize, 10);
+        content.style.fontSize = fontSize + 'px';
+    }
+    if (savedLineHeight) {
+        lineHeight = parseFloat(savedLineHeight);
+        content.style.lineHeight = lineHeight;
+    }
+    if (savedDarkMode) {
+        document.body.classList.add('dark-mode');
     }
 
-    function applySearchHighlight(keyword) {
-        const regex = new RegExp(`(${keyword})`, 'gi');
-        content.innerHTML = content.textContent.replace(regex, '<mark>$1</mark>');
+    // Save settings to local storage
+    function saveSettings() {
+        localStorage.setItem('fontSize', fontSize);
+        localStorage.setItem('lineHeight', lineHeight);
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     }
+
+    window.addEventListener('beforeunload', saveSettings);
 });
