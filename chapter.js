@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const closeSearchModal = document.querySelector('.modal .close');
     const audio = document.getElementById('audio');
+    const colorModal = document.getElementById('color-modal');
+    const colorOptions = document.querySelectorAll('.color-option');
+    const colorText = document.getElementById('color-text');
 
     let currentFontSize = 16;
     let isBold = false;
@@ -40,17 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         content.style.fontWeight = isBold ? 'bold' : 'normal';
     });
 
-    // تغيير لون النص
-    colorTextBtn.addEventListener('click', () => {
-        currentColorIndex = (currentColorIndex + 1) % colors.length;
-        content.style.color = colors[currentColorIndex];
-    });
-
-    // تفعيل/إلغاء الوضع الليلي
-    toggleDarkModeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
-
     // فتح نافذة البحث
     searchBtn.addEventListener('click', () => {
         searchModal.style.display = 'flex';
@@ -68,6 +60,30 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = content.innerHTML;
         const highlightedText = text.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
         content.innerHTML = highlightedText;
+    });
+
+    // فتح قائمة ألوان
+    colorTextBtn.addEventListener('click', () => {
+        colorModal.style.display = 'flex';
+    });
+
+    // اختيار اللون
+    colorOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedColor = option.getAttribute('data-color');
+            content.style.color = selectedColor;
+            colorModal.style.display = 'none';
+        });
+    });
+
+    // تفعيل/إلغاء الوضع الليلي
+    toggleDarkModeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+
+    // تعيين النص في زر تغيير اللون
+    colorText.addEventListener('click', () => {
+        colorModal.style.display = 'flex';
     });
 
     // إضافة تمييز للعودة لاحقاً
