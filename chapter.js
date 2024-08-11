@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     lineSpacingBtn.addEventListener('click', () => {
-        currentLineSpacing = currentLineSpacing + 0.1;
+        currentLineSpacing += 0.1;
         if (currentLineSpacing > 2) currentLineSpacing = 1.5; // الحد الأقصى للتباعد بين الأسطر
         content.style.lineHeight = `${currentLineSpacing}`;
         localStorage.setItem('lineSpacing', currentLineSpacing);
@@ -61,8 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (keyword) {
             searchKeyword = keyword;
             localStorage.setItem('searchKeyword', searchKeyword);
-            const regex = new RegExp(searchKeyword, 'gi');
-            content.innerHTML = content.textContent.replace(regex, (match) => `<mark>${match}</mark>`);
+            applySearchHighlight(searchKeyword);
         }
     });
 
@@ -72,7 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // إذا كان هناك كلمة محفوظة في التخزين المحلي، ابحث عنها عند تحميل الصفحة
     if (searchKeyword) {
-        const regex = new RegExp(searchKeyword, 'gi');
-        content.innerHTML = content.textContent.replace(regex, (match) => `<mark>${match}</mark>`);
+        applySearchHighlight(searchKeyword);
+    }
+
+    function applySearchHighlight(keyword) {
+        const regex = new RegExp(`(${keyword})`, 'gi');
+        content.innerHTML = content.textContent.replace(regex, '<mark>$1</mark>');
     }
 });
