@@ -31,7 +31,7 @@ body.dark-mode {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -65,7 +65,7 @@ body.dark-mode .header-box {
     font-size: 18px;
     color: #007bff;
     font-weight: bold;
-    margin: 0;
+    margin: 0 10px;
     transition: color 0.3s;
 }
 
@@ -86,7 +86,6 @@ body.dark-mode .chapter-title {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    position: relative; /* Position relative to control positioning of the audio player */
 }
 
 /* تأثيرات الوضع الليلي على محتوى الفصل */
@@ -112,34 +111,38 @@ body.dark-mode .chapter-content {
 
 /* تأثيرات الوضع الليلي على أزرار التنقل */
 body.dark-mode .navigation-buttons {
-    background-color: #444;
-    box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
+    background-color: #333;
 }
 
-.navigation-buttons a, .navigation-buttons button {
-    background: none; /* إزالة الخلفية */
+/* تنسيق الأزرار */
+.nav-button {
+    background: none;
     border: none;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-button:hover {
     color: #007bff;
+}
+
+/* تنسيق زر البحث */
+#search-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
     transition: color 0.3s;
 }
 
-.navigation-buttons a:hover, .navigation-buttons button:hover {
-    color: #0056b3;
+#search-btn:hover {
+    color: #007bff;
 }
 
-body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button {
-    color: #bbd1ff;
-}
-
-body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons button:hover {
-    color: #8899cc;
-}
-
-/* تنسيق صفحة البحث المنبثقة */
-.modal {
-    display: none; /* Initially hidden */
+/* نافذة البحث المنبثقة */
+#search-modal {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -150,33 +153,98 @@ body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons b
     align-items: center;
 }
 
-.modal-content {
+#search-modal .modal-content {
     background-color: #fff;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 80%;
+    border-radius: 8px;
     max-width: 500px;
+    width: 100%;
+    position: relative;
 }
 
-.close {
+#search-modal .modal-content input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#search-modal .modal-content .close {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
+    color: #333;
 }
 
-/* تنسيق زر البحث */
-#search-btn {
+/* قائمة ألوان */
+#color-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#color-modal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    width: 100%;
+    position: relative;
+}
+
+#color-modal .modal-content h3 {
+    margin: 0 0 10px 0;
+}
+
+.color-option {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+    transition: border 0.3s;
+}
+
+.color-option:hover {
+    border: 2px solid #007bff;
+}
+
+/* تنسيق زر أيقونة الصوت */
+#audio-btn {
     background: none;
     border: none;
-    font-size: 24px;
     cursor: pointer;
-    color: #007bff;
-    transition: color 0.3s;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
-#search-btn:hover {
-    color: #0056b3;
+/* قائمة الألوان */
+.color-option[data-color="#000"] {
+    background-color: #000;
 }
+
+.color-option[data-color="#f00"] {
+    background-color: #f00;
+}
+
+.color-option[data-color="#0f0"] {
+    background-color: #0f0;
+}
+
+.color-option[data-color="#00f"] {
+    background-color: #00f;
+}
+
+.color-option[data-color="#fff"] {
+    background-color: #fff;
+    }
