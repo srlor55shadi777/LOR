@@ -11,6 +11,7 @@
     <header class="header">
         <div class="header-box">
             <div class="chapter-title">عنوان الفصل</div>
+            <button id="search-btn"><i class="fas fa-search"></i></button>
         </div>
     </header>
 
@@ -18,31 +19,32 @@
         <div class="chapter-content" id="chapterContent">
             <p>هنا يكون نص الفصل. يمكنك إضافة أي نص ترغب فيه هنا.</p>
             <p>استمتع بقراءة الفصل!</p>
+            <audio id="audio" controls>
+                <source src="FS.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
         </div>
     </div>
 
     <footer>
         <div class="navigation-buttons">
-            <a href="chapter2.html" id="prev-btn"><i class="fas fa-chevron-left"></i></a>
+            <a href="F2.html" id="prev-btn"><i class="fas fa-chevron-left"></i></a>
             <button id="decrease-font"><i class="fas fa-search-minus"></i></button>
             <button id="increase-font"><i class="fas fa-search-plus"></i></button>
             <button id="bold-text"><i class="fas fa-bold"></i></button>
             <button id="color-text"><i class="fas fa-tachometer-alt"></i></button>
-            <button id="line-spacing"><i class="fas fa-text-height"></i></button>
-            <button id="search-text"><i class="fas fa-search"></i></button>
             <button id="toggle-dark-mode"><i class="fas fa-moon"></i></button>
             <a href="index.html" id="next-btn"><i class="fas fa-chevron-right"></i></a>
         </div>
     </footer>
 
-    <div id="search-popup" class="search-popup">
-        <div class="search-popup-content">
-            <span id="close-search-popup" class="close-search-popup">&times;</span>
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
             <input type="text" id="search-input" placeholder="ابحث عن كلمة...">
-            <button id="search-submit">بحث</button>
         </div>
     </div>
 
     <script src="chapter.js"></script>
 </body>
-</html>
+                </html>
