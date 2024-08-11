@@ -107,6 +107,7 @@ body.dark-mode .chapter-content {
     position: fixed;
     bottom: 0;
     width: 100%;
+    border-top: 1px solid #ddd;
 }
 
 body.dark-mode .navigation-buttons {
@@ -115,18 +116,17 @@ body.dark-mode .navigation-buttons {
 }
 
 .navigation-buttons a, .navigation-buttons button {
-    background: none; /* إزالة الخلفية */
+    background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
     color: #007bff;
     transition: color 0.3s, transform 0.3s;
-    opacity: 0;
-    transform: translateY(20px);
 }
 
 .navigation-buttons a:hover, .navigation-buttons button:hover {
     color: #0056b3;
+    transform: scale(1.1); /* تكبير الأيقونة عند المرور عليها */
 }
 
 body.dark-mode .navigation-buttons a, body.dark-mode .navigation-buttons button {
@@ -141,36 +141,14 @@ body.dark-mode .navigation-buttons a:hover, body.dark-mode .navigation-buttons b
 @keyframes bounceIn {
     0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: scale(0.5);
     }
     60% {
         opacity: 1;
-        transform: translateY(-10px);
+        transform: scale(1.2);
     }
     100% {
-        transform: translateY(0);
+        opacity: 1;
+        transform: scale(1);
     }
 }
-
-.icon {
-    animation: bounceIn 0.5s ease-in-out forwards;
-}
-
-.icon:nth-child(1) {
-    animation-delay: 0s;
-}
-.icon:nth-child(2) {
-    animation-delay: 0.1s;
-}
-.icon:nth-child(3) {
-    animation-delay: 0.2s;
-}
-.icon:nth-child(4) {
-    animation-delay: 0.3s;
-}
-.icon:nth-child(5) {
-    animation-delay: 0.4s;
-}
-.icon:nth-child(6) {
-    animation-delay: 0.5s;
-    }
