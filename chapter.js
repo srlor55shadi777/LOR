@@ -4,98 +4,119 @@ document.addEventListener('DOMContentLoaded', function() {
     const decreaseFontBtn = document.getElementById('decrease-font');
     const boldTextBtn = document.getElementById('bold-text');
     const colorTextBtn = document.getElementById('color-text');
-    const lineSpacingBtn = document.getElementById('line-spacing');
-    const searchPopup = document.getElementById('search-popup');
-    const closeSearchPopup = document.getElementById('close-search-popup');
-    const searchInput = document.getElementById('search-input');
-    const searchSubmit = document.getElementById('search-submit');
     const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
+    const searchBtn = document.getElementById('search-btn');
+    const searchModal = document.getElementById('search-modal');
+    const searchInput = document.getElementById('search-input');
+    const closeSearchModal = document.querySelector('.modal .close');
+    const audio = document.getElementById('audio');
 
-    let fontSize = 16;
-    let lineHeight = 1.5;
-    const maxLineHeight = 3;
+    let currentFontSize = 16;
+    let isBold = false;
+    const maxFontSize = 28;
+    const minFontSize = 14;
+    const colors = ['#000', '#f00', '#0f0', '#00f', '#fff'];
+    let currentColorIndex = 0;
 
-    // Initialize font size and line height
-    content.style.fontSize = fontSize + 'px';
-    content.style.lineHeight = lineHeight;
-
-    // Increase font size
+    // زيادة حجم الخط
     increaseFontBtn.addEventListener('click', () => {
-        fontSize += 2;
-        content.style.fontSize = fontSize + 'px';
+        if (currentFontSize < maxFontSize) {
+            currentFontSize += 2;
+            content.style.fontSize = `${currentFontSize}px`;
+        }
     });
 
-    // Decrease font size
+    // تقليل حجم الخط
     decreaseFontBtn.addEventListener('click', () => {
-        fontSize = Math.max(12, fontSize - 2); // Minimum font size
-        content.style.fontSize = fontSize + 'px';
+        if (currentFontSize > minFontSize) {
+            currentFontSize -= 2;
+            content.style.fontSize = `${currentFontSize}px`;
+        }
     });
 
-    // Toggle bold text
+    // تغيير سمك الخط
     boldTextBtn.addEventListener('click', () => {
-        content.style.fontWeight = content.style.fontWeight === 'bold' ? 'normal' : 'bold';
+        isBold = !isBold;
+        content.style.fontWeight = isBold ? 'bold' : 'normal';
     });
 
-    // Toggle text color
+    // تغيير لون النص
     colorTextBtn.addEventListener('click', () => {
-        const color = prompt('Enter a color (name or hex code):', '#000000');
-        if (color) {
-            content.style.color = color;
-        }
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        content.style.color = colors[currentColorIndex];
     });
 
-    // Adjust line spacing
-    lineSpacingBtn.addEventListener('click', () => {
-        lineHeight = lineHeight < maxLineHeight ? lineHeight + 0.2 : 1.5;
-        content.style.lineHeight = lineHeight;
-    });
-
-    // Search text functionality
-    searchSubmit.addEventListener('click', () => {
-        const query = searchInput.value.trim();
-        if (query) {
-            const regex = new RegExp(query, 'gi');
-            content.innerHTML = content.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
-        }
-    });
-
-    // Open and close search popup
-    document.getElementById('search-text').addEventListener('click', () => {
-        searchPopup.style.display = 'flex';
-    });
-
-    closeSearchPopup.addEventListener('click', () => {
-        searchPopup.style.display = 'none';
-    });
-
-    // Toggle dark mode
+    // تفعيل/إلغاء الوضع الليلي
     toggleDarkModeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
 
-    // Initialize saved settings from local storage
+    // فتح نافذة البحث
+    searchBtn.addEventListener('click', () => {
+        searchModal.style.display = 'flex';
+        searchInput.focus();
+    });
+
+    // إغلاق نافذة البحث
+    closeSearchModal.addEventListener('click', () => {
+        searchModal.style.display = 'none';
+    });
+
+    // البحث عن الكلمات
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const text = content.innerHTML;
+        const highlightedText = text.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+        content.innerHTML = highlightedText;
+    });
+
+    // إضافة تمييز للعودة لاحقاً
+    content.addEventListener('click', () => {
+        localStorage.setItem('lastReadChapter', window.location.href);
+    });
+
+    // التحقق من وجود فاصل زمني للعودة
+    window.addEventListener('load', () => {
+        const lastReadChapter = localStorage.getItem('lastReadChapter');
+        if (lastReadChapter && lastReadChapter !== window.location.href) {
+            const lastReadButton = document.createElement('a');
+            lastReadButton.href = lastReadChapter;
+            lastReadButton.innerText = 'العودة إلى الفصل السابق';
+            lastReadButton.style.position = 'fixed';
+            lastReadButton.style.bottom = '10px';
+            lastReadButton.style.right = '10px';
+            lastReadButton.style.padding = '10px';
+            lastReadButton.style.backgroundColor = '#007bff';
+            lastReadButton.style.color = '#fff';
+            lastReadButton.style.textDecoration = 'none';
+            lastReadButton.style.borderRadius = '5px';
+            document.body.appendChild(lastReadButton);
+        }
+    });
+
+    // ضبط لون وحجم الخط من التخزين المحلي
     const savedFontSize = localStorage.getItem('fontSize');
-    const savedLineHeight = localStorage.getItem('lineHeight');
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-
     if (savedFontSize) {
-        fontSize = parseInt(savedFontSize, 10);
-        content.style.fontSize = fontSize + 'px';
-    }
-    if (savedLineHeight) {
-        lineHeight = parseFloat(savedLineHeight);
-        content.style.lineHeight = lineHeight;
-    }
-    if (savedDarkMode) {
-        document.body.classList.add('dark-mode');
+        currentFontSize = parseInt(savedFontSize);
+        content.style.fontSize = `${currentFontSize}px`;
     }
 
-    // Save settings to local storage
-    function saveSettings() {
-        localStorage.setItem('fontSize', fontSize);
-        localStorage.setItem('lineHeight', lineHeight);
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    const savedFontWeight = localStorage.getItem('fontWeight');
+    if (savedFontWeight) {
+        content.style.fontWeight = savedFontWeight;
+        isBold = savedFontWeight === 'bold';
     }
 
-    window.addEventListener('beforeunload', saveSettings);
+    const savedColor = localStorage.getItem('fontColor');
+    if (savedColor) {
+        content.style.color = savedColor;
+        currentColorIndex = colors.indexOf(savedColor);
+    }
+
+    // حفظ التغييرات في التخزين المحلي
+    content.addEventListener('input', () => {
+        localStorage.setItem('fontSize', currentFontSize);
+        localStorage.setItem('fontWeight', content.style.fontWeight);
+        localStorage.setItem('fontColor', content.style.color);
+    });
 });
