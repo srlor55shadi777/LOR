@@ -3,60 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>رواية</title>
+    <title>لماذا أنا</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <button id="search-btn"><i class="fa fa-search"></i></button>
-        <div class="header-box">
-            <h1 class="chapter-title">عنوان الفصل</h1>
-        </div>
+    <header>
+        <div class="title">لماذا أنا</div>
+        <div class="chapter-number">الفصل 1</div>
+        <button id="search-btn" class="icon-btn"><i class="fas fa-search"></i></button>
+    </header>
+    <div id="search-popup" class="popup hidden">
+        <input type="text" id="search-input" placeholder="ابحث عن الكلمات">
+        <button id="search-submit" class="icon-btn"><i class="fas fa-search"></i></button>
     </div>
-
-    <div class="chapter-content">
-        <p>هنا يكون نص الفصل. يمكنك إضافة أي نص ترغب فيه هنا.</p>
-        <p>استمتع بقراءة الفصل!</p>
-        <audio controls>
-            <source src="FS.mp3" type="audio/mpeg">
-            متصفحك لا يدعم عنصر الصوت.
-        </audio>
+    <div class="audio-player">
+        <audio id="audio" src="FS.mp3"></audio>
+        <button id="play-btn" class="icon-btn"><i class="fas fa-play"></i></button>
     </div>
-
-    <div id="search-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="close-search-modal">&times;</span>
-            <h3>بحث</h3>
-            <input type="text" id="search-input" placeholder="ابحث عن كلمة...">
-            <button id="search-action-btn">بحث</button>
-            <div id="search-results"></div>
-        </div>
+    <div class="chapter-content" id="chapter-content">
+        <p>محتوى الفصل هنا...</p>
     </div>
-
-    <div id="color-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="close-color-modal">&times;</span>
-            <h3>اختر لون</h3>
-            <div class="color-option" data-color="#000"></div>
-            <div class="color-option" data-color="#fff"></div>
-            <div class="color-option" data-color="#ffcccc"></div>
-            <div class="color-option" data-color="#ccffcc"></div>
-            <div class="color-option" data-color="#ccccff"></div>
-            <div class="color-option" data-color="#333333"></div>
-            <div class="color-option" data-color="#666666"></div>
-            <div class="color-option" data-color="#999999"></div>
-        </div>
+    <div class="controls">
+        <button id="increase-font" class="icon-btn"><i class="fas fa-font"></i></button>
+        <button id="change-color" class="icon-btn"><i class="fas fa-palette"></i></button>
+        <button id="bold-text" class="icon-btn"><i class="fas fa-bold"></i></button>
+        <button id="toggle-theme" class="icon-btn"><i class="fas fa-sun"></i></button>
+        <button id="prev-chapter" class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+        <button id="next-chapter" class="icon-btn"><i class="fas fa-chevron-right"></i></button>
     </div>
-
-    <div class="navigation-buttons">
-        <button class="nav-button" id="prev-btn"><i class="fa fa-arrow-left"></i></button>
-        <button class="nav-button" id="color-btn"><i class="fa fa-palette"></i></button>
-        <button class="nav-button" id="font-size-increase-btn"><i class="fa fa-plus"></i></button>
-        <button class="nav-button" id="font-size-decrease-btn"><i class="fa fa-minus"></i></button>
-        <button class="nav-button" id="toggle-dark-mode-btn"><i class="fa fa-moon"></i></button>
-        <button class="nav-button" id="next-btn"><i class="fa fa-arrow-right"></i></button>
-    </div>
-
-    <script src="chapter.js"></script>
+    <script src="Chapter.js"></script>
 </body>
 </html>
