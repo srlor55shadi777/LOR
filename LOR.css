@@ -58,7 +58,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
     left: 20px;
-    top: -10px; /* تحريك الدائرة قليلاً فوق خط المربع */
+    top: -20px; /* تحريك الدائرة قليلاً فوق خط المربع */
 }
 
 .content {
@@ -99,7 +99,7 @@ body {
 }
 
 .instagram-icon, .youtube-icon {
-    width: 20px; /* حجم الأيقونة */
-    height: 20px;
+    width: 24px; /* حجم الأيقونة */
+    height: 24px;
     vertical-align: middle;
 }
