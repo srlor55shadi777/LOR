@@ -1,70 +1,63 @@
-// JavaScript لإدارة البحث، وتغيير الألوان، والتحكم بحجم النص
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBtn = document.getElementById('search-btn');
+    const searchPopup = document.getElementById('search-popup');
+    const searchSubmit = document.getElementById('search-submit');
+    const playBtn = document.getElementById('play-btn');
+    const audio = document.getElementById('audio');
+    const chapterContent = document.getElementById('chapter-content');
+    const increaseFontBtn = document.getElementById('increase-font');
+    const changeColorBtn = document.getElementById('change-color');
+    const boldTextBtn = document.getElementById('bold-text');
+    const toggleThemeBtn = document.getElementById('toggle-theme');
+    const prevChapterBtn = document.getElementById('prev-chapter');
+    const nextChapterBtn = document.getElementById('next-chapter');
 
-    // تفعيل وإلغاء نافذة البحث
-    const searchBtn = document.getElementById("search-btn");
-    const searchModal = document.getElementById("search-modal");
-    const closeSearchModal = document.getElementById("close-search-modal");
+    let fontSize = 16;
+    let isDarkTheme = false;
 
-    searchBtn.addEventListener("click", () => {
-        searchModal.style.display = "flex";
+    searchBtn.addEventListener('click', () => {
+        searchPopup.classList.toggle('hidden');
     });
 
-    closeSearchModal.addEventListener("click", () => {
-        searchModal.style.display = "none";
+    searchSubmit.addEventListener('click', () => {
+        // Add search functionality here
     });
 
-    // تفعيل وإلغاء نافذة اختيار الألوان
-    const colorBtn = document.getElementById("color-btn");
-    const colorModal = document.getElementById("color-modal");
-    const closeColorModal = document.getElementById("close-color-modal");
-
-    colorBtn.addEventListener("click", () => {
-        colorModal.style.display = "flex";
+    playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            audio.pause();
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }
     });
 
-    closeColorModal.addEventListener("click", () => {
-        colorModal.style.display = "none";
+    increaseFontBtn.addEventListener('click', () => {
+        fontSize = fontSize < 26 ? fontSize + 2 : 26;
+        chapterContent.style.fontSize = `${fontSize}px`;
     });
 
-    // تغيير الألوان عند النقر على خيارات الألوان
-    const colorOptions = document.querySelectorAll(".color-option");
-    colorOptions.forEach(option => {
-        option.addEventListener("click", () => {
-            document.body.style.backgroundColor = option.dataset.color;
-        });
+    changeColorBtn.addEventListener('click', () => {
+        const currentColor = chapterContent.style.color;
+        chapterContent.style.color = currentColor === 'black' ? 'blue' : 'black';
     });
 
-    // تفعيل الوضع الليلي
-    const toggleDarkModeBtn = document.getElementById("toggle-dark-mode-btn");
-    toggleDarkModeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+    boldTextBtn.addEventListener('click', () => {
+        chapterContent.style.fontWeight = chapterContent.style.fontWeight === 'bold' ? 'normal' : 'bold';
     });
 
-    // زيادة حجم النص
-    const fontSizeIncreaseBtn = document.getElementById("font-size-increase-btn");
-    fontSizeIncreaseBtn.addEventListener("click", () => {
-        document.body.style.fontSize = (parseFloat(window.getComputedStyle(document.body).fontSize) + 1) + "px";
+    toggleThemeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        isDarkTheme = !isDarkTheme;
+        toggleThemeBtn.innerHTML = isDarkTheme ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     });
 
-    // تقليل حجم النص
-    const fontSizeDecreaseBtn = document.getElementById("font-size-decrease-btn");
-    fontSizeDecreaseBtn.addEventListener("click", () => {
-        document.body.style.fontSize = (parseFloat(window.getComputedStyle(document.body).fontSize) - 1) + "px";
+    prevChapterBtn.addEventListener('click', () => {
+        window.location.href = 'F1.html'; // Replace with previous chapter if available
     });
 
-    // إدارة أزرار التنقل
-    const nextButton = document.getElementById("next-chapter-btn");
-    const prevButton = document.getElementById("prev-chapter-btn");
-
-    nextButton.addEventListener("click", () => {
-        // الانتقال للفصل التالي
-        window.location.href = "next-chapter.html"; // قم بتعديل الرابط حسب الحاجة
+    nextChapterBtn.addEventListener('click', () => {
+        window.location.href = 'F2.html'; // Replace with next chapter
     });
-
-    prevButton.addEventListener("click", () => {
-        // العودة للفصل السابق
-        window.location.href = "prev-chapter.html"; // قم بتعديل الرابط حسب الحاجة
-    });
-
 });
