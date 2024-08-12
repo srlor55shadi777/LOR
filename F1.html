@@ -3,40 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تجربة المستخدم مع تسجيل صوتي</title>
+    <title>الفصل الأول</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-    <header class="fixed-header">
+
+    <!-- رأس الصفحة الثابت -->
+    <div class="fixed-header">
         <div class="header-container">
-            <div class="chapter-number">
-                <span>1</span>
-            </div>
+            <div class="chapter-number">1</div>
             <div class="chapter-header">
                 <h1>عنوان الفصل</h1>
             </div>
         </div>
-    </header>
+    </div>
 
+    <!-- محتوى الصفحة -->
     <div class="content">
-        <!-- مربع التسجيل الصوتي -->
         <div class="audio-player-container">
             <div class="audio-info">
                 <p class="narrator-info">قراءة وسرد الرواية | <span class="narrator-name">تارين</span></p>
-                <a href="https://www.instagram.com/tarin.9_?igsh=MTlmZXh3bHE1b3djbA==" target="_blank" class="instagram-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-icon">
-                </a>
-                <a href="https://m.youtube.com/@tarin.9_" target="_blank" class="youtube-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="youtube-icon">
-                </a>
+                <div class="instagram-link">
+                    <a href="https://www.instagram.com/tarin.9_?igsh=MTlmZXh3bHE1b3djbA==" target="_blank">
+                        <img src="path/to/instagram-icon.png" class="instagram-icon" alt="Instagram">
+                    </a>
+                    <span class="icon-text">حسابات تارين</span>
+                </div>
+                <div class="youtube-link">
+                    <a href="https://m.youtube.com/@tarin.9_" target="_blank">
+                        <img src="path/to/youtube-icon.png" class="youtube-icon" alt="YouTube">
+                    </a>
+                    <span class="icon-text">حسابات تارين</span>
+                </div>
             </div>
             <audio controls>
                 <source src="FS.mp3" type="audio/mpeg">
-                المتصفح لا يدعم تشغيل هذا النوع من الملفات الصوتية.
+                Your browser does not support the audio element.
             </audio>
         </div>
-        
-        <p>هنا يمكنك إضافة محتوى الرواية...</p>
     </div>
 
     <script src="Chapter.js"></script>
