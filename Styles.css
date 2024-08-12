@@ -12,9 +12,9 @@ body {
     background-color: #333;
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* هذا السطر يضمن توسيط عنوان الفصل */
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
@@ -24,6 +24,9 @@ body {
     border-radius: 25px;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex: 1; /* يجعل المربع يتمدد لملء المساحة المتاحة */
+    text-align: center; /* يضمن توسيط النص داخل المربع */
+    max-width: 90%; /* يتناسب مع شاشة المستخدم */
 }
 
 .chapter-header h1 {
@@ -44,9 +47,11 @@ body {
     font-weight: bold;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 10px; /* يضع الدائرة في اليسار */
 }
 
 .content {
     margin-top: 100px; /* يضمن أن المحتوى لا يتداخل مع رأس الصفحة الثابت */
     padding: 20px;
-  }
+}
