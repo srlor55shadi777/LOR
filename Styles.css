@@ -58,7 +58,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
     left: 20px;
-    top: 0px; /* إنزال الدائرة قليلاً للأسفل */
+    top: -10px; /* إنزال الدائرة قليلاً للأسفل */
 }
 
 .content {
@@ -108,27 +108,27 @@ audio::-webkit-media-controls-mute-button {
     color: #0277bd; /* اللون الأزرق لكلمة "تارين" */
 }
 
-.instagram-link, .youtube-link {
-    display: inline-block;
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
-    margin-left: 5px; /* تصغير المسافة بين الأيقونات */
-    text-decoration: none;
 }
 
 .instagram-icon, .youtube-icon {
-    vertical-align: middle;
-}
-
-.instagram-icon {
-    width: 24px; /* حجم أيقونة إنستغرام */
-    height: 24px;
+    font-size: 28px; /* حجم أيقونات الإنستغرام واليوتيوب */
+    color: #000; /* لون الأيقونات */
+    margin: 0 8px;
 }
 
 .youtube-icon {
-    width: 28px; /* حجم أيقونة يوتيوب */
-    height: 18px; /* جعل الأيقونة مستطيلة */
-    /* جعل الأيقونة مستطيلة */
-    border-radius: 4px; /* زاوية مستديرة صغيرة لجعل الأيقونة تبدو مستطيلة */
+    font-size: 28px;
+    width: 28px;
+    height: 18px;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #ff0000; /* لون يوتيوب */
+    padding: 2px;
 }
 
 .icon-text {
