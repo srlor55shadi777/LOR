@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0f7fa; /* خلفية الموقع باللون الأزرق الفاتح */
+    background-color: #fff; /* لون خلفية الموقع أبيض */
 }
 
 .fixed-header {
@@ -12,10 +12,10 @@ body {
     background-color: #0277bd; /* اللون الأزرق الغامق للرأس */
     color: white;
     display: flex;
-    justify-content: center; /* توسيط الرأس */
+    justify-content: center;
     align-items: center;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* إضافة الظلال للرأس */
     z-index: 1000;
 }
 
@@ -25,6 +25,7 @@ body {
     width: 100%;
     max-width: 1200px; /* الحد الأقصى لعرض الرأس */
     padding: 0 20px;
+    position: relative;
 }
 
 .chapter-header {
@@ -56,7 +57,8 @@ body {
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
-    left: 20px; /* يضع الدائرة في اليسار */
+    left: 20px;
+    top: -10px; /* تحريك الدائرة قليلاً فوق خط المربع */
 }
 
 .content {
