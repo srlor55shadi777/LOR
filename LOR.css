@@ -103,3 +103,14 @@ body {
     height: 20px;
     vertical-align: middle;
 }
+.instagram-link, .youtube-link {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px; /* تصغير المسافة بين الأيقونات */
+}
+
+.instagram-icon, .youtube-icon {
+    width: 20px; /* حجم الأيقونة */
+    height: 20px;
+    vertical-align: middle;
+    }
