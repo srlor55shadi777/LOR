@@ -15,14 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let fontSize = 16;
     let isDarkTheme = false;
 
+    // Toggle search popup
     searchBtn.addEventListener('click', () => {
         searchPopup.classList.toggle('hidden');
     });
 
+    // Search functionality (placeholder)
     searchSubmit.addEventListener('click', () => {
-        // Add search functionality here
+        const query = document.getElementById('search-input').value;
+        console.log('Searching for:', query);
+        // Implement search functionality
     });
 
+    // Play/Pause audio
     playBtn.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
@@ -33,31 +38,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Increase font size
     increaseFontBtn.addEventListener('click', () => {
         fontSize = fontSize < 26 ? fontSize + 2 : 26;
         chapterContent.style.fontSize = `${fontSize}px`;
     });
 
+    // Change text color
     changeColorBtn.addEventListener('click', () => {
         const currentColor = chapterContent.style.color;
         chapterContent.style.color = currentColor === 'black' ? 'blue' : 'black';
     });
 
+    // Toggle bold text
     boldTextBtn.addEventListener('click', () => {
         chapterContent.style.fontWeight = chapterContent.style.fontWeight === 'bold' ? 'normal' : 'bold';
     });
 
+    // Toggle dark/light theme
     toggleThemeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         isDarkTheme = !isDarkTheme;
         toggleThemeBtn.innerHTML = isDarkTheme ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     });
 
+    // Navigate to previous chapter
     prevChapterBtn.addEventListener('click', () => {
-        window.location.href = 'F1.html'; // Replace with previous chapter if available
+        window.location.href = 'F1.html'; // Replace with actual previous chapter URL
     });
 
+    // Navigate to next chapter
     nextChapterBtn.addEventListener('click', () => {
-        window.location.href = 'F2.html'; // Replace with next chapter
+        window.location.href = 'F2.html'; // Replace with actual next chapter URL
     });
 });
