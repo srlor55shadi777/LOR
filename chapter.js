@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Change text color
     changeColorBtn.addEventListener('click', () => {
         const currentColor = chapterContent.style.color;
-        chapterContent.style.color = currentColor === 'black' ? 'blue' : 'black';
+        chapterContent.style.color = currentColor === 'black' || currentColor === '' ? 'blue' : 'black';
     });
 
     // Toggle bold text
@@ -64,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navigate to previous chapter
     prevChapterBtn.addEventListener('click', () => {
-        window.location.href = 'F1.html'; // Replace with actual previous chapter URL
+        window.location.href = 'F1.html'; // Adjust as needed
     });
 
     // Navigate to next chapter
     nextChapterBtn.addEventListener('click', () => {
-        window.location.href = 'F2.html'; // Replace with actual next chapter URL
+        window.location.href = 'F2.html'; // Adjust as needed
     });
 });
