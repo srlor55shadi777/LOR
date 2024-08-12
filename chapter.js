@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle search popup
     searchBtn.addEventListener('click', () => {
+        console.log('Search button clicked');
         searchPopup.classList.toggle('hidden');
     });
 
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Play/Pause audio
     playBtn.addEventListener('click', () => {
+        console.log('Play button clicked');
         if (audio.paused) {
             audio.play();
             playBtn.innerHTML = '<i class="fas fa-pause"></i>';
@@ -40,23 +42,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Increase font size
     increaseFontBtn.addEventListener('click', () => {
+        console.log('Increase font button clicked');
         fontSize = fontSize < 26 ? fontSize + 2 : 26;
         chapterContent.style.fontSize = `${fontSize}px`;
     });
 
     // Change text color
     changeColorBtn.addEventListener('click', () => {
+        console.log('Change color button clicked');
         const currentColor = chapterContent.style.color;
         chapterContent.style.color = currentColor === 'black' || currentColor === '' ? 'blue' : 'black';
     });
 
     // Toggle bold text
     boldTextBtn.addEventListener('click', () => {
+        console.log('Bold text button clicked');
         chapterContent.style.fontWeight = chapterContent.style.fontWeight === 'bold' ? 'normal' : 'bold';
     });
 
     // Toggle dark/light theme
     toggleThemeBtn.addEventListener('click', () => {
+        console.log('Toggle theme button clicked');
         document.body.classList.toggle('dark-theme');
         isDarkTheme = !isDarkTheme;
         toggleThemeBtn.innerHTML = isDarkTheme ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
@@ -64,11 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navigate to previous chapter
     prevChapterBtn.addEventListener('click', () => {
+        console.log('Previous chapter button clicked');
         window.location.href = 'F1.html'; // Adjust as needed
     });
 
     // Navigate to next chapter
     nextChapterBtn.addEventListener('click', () => {
+        console.log('Next chapter button clicked');
         window.location.href = 'F2.html'; // Adjust as needed
     });
 });
