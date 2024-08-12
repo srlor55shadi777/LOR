@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رأس الصفحة الثابت</title>
+    <title>تجربة المستخدم مع تسجيل صوتي</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
@@ -18,9 +18,16 @@
         </div>
     </header>
 
-    <!-- محتوى الصفحة الرئيسي هنا -->
     <div class="content">
-        <p>هنا يمكنك إضافة محتوى الصفحة...</p>
+        <!-- مربع التسجيل الصوتي -->
+        <div class="audio-player-container">
+            <audio controls>
+                <source src="FS.mp3" type="audio/mpeg">
+                المتصفح لا يدعم تشغيل هذا النوع من الملفات الصوتية.
+            </audio>
+        </div>
+        
+        <p>هنا يمكنك إضافة محتوى الرواية...</p>
     </div>
 
     <script src="Chapter.js"></script>
