@@ -1,132 +1,106 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Styles.css */
 
+/* General styles */
 body {
     font-family: Arial, sans-serif;
+    direction: rtl; /* الكتابة من اليمين لليسار */
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    color: #000;
 }
 
+/* Header styles */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #f4f4f4;
+    background: #f8f9fa;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
 }
 
+/* Title and chapter number */
 .title {
     font-size: 24px;
-    text-align: center;
-    flex-grow: 1;
+    font-weight: bold;
 }
 
 .chapter-number {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    margin-left: 20px;
+}
+
+/* Search popup */
+#search-popup {
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
 }
 
 .icon-btn {
-    border: none;
     background: none;
-    font-size: 18px;
+    border: none;
     cursor: pointer;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.icon-btn i {
     font-size: 18px;
 }
 
+/* Audio player */
 .audio-player {
-    margin-top: 80px;
+    margin: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.audio-player button {
-    margin-left: 10px;
-}
-
+/* Chapter content */
 .chapter-content {
-    margin-top: 20px;
     padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
 }
 
+/* Fullscreen button */
+.fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Controls */
 .controls {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #f4f4f4;
+    background: #f8f9fa;
     padding: 10px;
     display: flex;
-    justify-content: center;
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+    justify-content: space-around;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.controls .icon-btn {
-    margin: 0 10px;
-}
-
-.popup {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.popup.hidden {
-    display: none;
-}
-
-.popup input {
-    margin-right: 10px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
+/* Dark theme */
 .dark-theme {
-    background-color: #333;
-    color: #eee;
+    background: #333;
+    color: #fff;
 }
 
-.dark-theme header {
-    background-color: #444;
-}
-
+.dark-theme header,
 .dark-theme .chapter-content {
-    background-color: #555;
-    color: #eee;
+    background: #444;
+    color: #fff;
 }
 
-.dark-theme .controls {
-    background-color: #444;
-}
-
-.dark-theme .icon-btn i {
-    color: #eee;
-}
+.dark-theme .icon-btn {
+    color: #fff;
+        }
