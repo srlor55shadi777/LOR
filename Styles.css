@@ -74,9 +74,26 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظلال خفيفة لمربع الصوت */
     max-width: 80%;
+    position: relative;
 }
 
-audio {
-    width: 100%;
-    outline: none;
+.audio-info {
+    margin-top: 10px;
+}
+
+.narrator-info {
+    font-size: 16px;
+    color: #4caf50; /* اللون الأخضر للنص */
+    margin: 0;
+}
+
+.instagram-link {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
 }
