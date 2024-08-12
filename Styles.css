@@ -58,7 +58,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
     left: 20px;
-    top: -20px; /* تحريك الدائرة قليلاً فوق خط المربع */
+    top: 0px; /* إنزال الدائرة قليلاً للأسفل */
 }
 
 .content {
@@ -74,7 +74,23 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظلال خفيفة لمربع الصوت */
     max-width: 80%;
+    width: 100%; /* عرض كامل ليتناسب مع التسجيل الصوتي */
     position: relative;
+}
+
+audio {
+    width: 100%; /* عرض التسجيل الصوتي ليتناسب مع حجم المربع */
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #f5f5f5; /* خلفية مخصصة للتحكم */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-mute-button {
+    filter: grayscale(1) brightness(0.5); /* إلغاء ميزة تسريع أو تنزيل الصوت */
 }
 
 .audio-info {
@@ -99,7 +115,17 @@ body {
 }
 
 .instagram-icon, .youtube-icon {
-    width: 24px; /* حجم الأيقونة */
-    height: 24px;
     vertical-align: middle;
 }
+
+.instagram-icon {
+    width: 24px; /* حجم أيقونة إنستغرام */
+    height: 24px;
+}
+
+.youtube-icon {
+    width: 28px; /* حجم أيقونة يوتيوب */
+    height: 28px;
+    /* جعل الأيقونة مستطيلة نوعاً ما */
+    border-radius: 4px; /* زاوية مستديرة صغيرة لجعل الأيقونة تبدو مستطيلة */
+    }
