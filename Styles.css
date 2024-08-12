@@ -58,7 +58,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
     left: 20px;
-    top: -10px; /* تحريك الدائرة قليلاً فوق خط المربع */
+    top: -20px; /* تحريك الدائرة قليلاً فوق خط المربع */
 }
 
 .content {
@@ -78,12 +78,13 @@ body {
 }
 
 .audio-info {
-    margin-top: 10px;
+    margin-bottom: 10px; /* مسافة صغيرة بين النص ومشغل الصوت */
 }
 
 .narrator-info {
     font-size: 16px;
-    color: #4caf50; /* اللون الأخضر للنص */
+    color: #000; /* اللون الأسود للنص */
+    font-weight: bold; /* خط سميك */
     margin: 0;
 }
 
@@ -91,13 +92,14 @@ body {
     color: #0277bd; /* اللون الأزرق لكلمة "تارين" */
 }
 
-.instagram-link {
+.instagram-link, .youtube-link {
     display: inline-block;
     margin-top: 10px;
+    margin-left: 5px; /* تصغير المسافة بين الأيقونات */
 }
 
-.instagram-icon {
-    width: 20px; /* تصغير حجم الأيقونة إلى 20 بكسل */
-    height: 20px;
+.instagram-icon, .youtube-icon {
+    width: 24px; /* حجم الأيقونة */
+    height: 24px;
     vertical-align: middle;
 }
