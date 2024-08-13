@@ -117,9 +117,9 @@ audio::-webkit-media-controls-mute-button {
 }
 
 .instagram-icon, .youtube-icon {
-    font-size: 28px; /* تصغير الأيقونات 3 بكسل أقل */
+    font-size: 20px; /* تصغير الأيقونات 3 بكسل إضافية (الحجم النهائي 25 بكسل) */
     color: #0277bd; /* اللون الأزرق للأيقونات */
-    margin: 0 12px; /* إضافة مسافة بين الأيقونات */
+    margin: 0 10px; /* تقريب الأيقونات من بعضها */
 }
 
 .icon-text {
