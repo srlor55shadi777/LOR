@@ -1,197 +1,148 @@
+/* تنسيق الجسم العام */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #fff; /* لون خلفية الموقع أبيض */
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* لون الخلفية أبيض */
+    color: #000000;
 }
 
+/* رأس الصفحة */
 .fixed-header {
     position: fixed;
-    top: 0;
     width: 100%;
-    background-color: #0277bd; /* اللون الأزرق الغامق للرأس */
-    color: white;
-    display: flex;
-    justify-content: center; /* توسيط الرأس */
-    align-items: center;
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* إضافة الظلال للرأس */
+    top: 0;
+    left: 0;
+    background-color: #007bff;
+    box-shadow: 0 4px 2px -2px gray; /* إضافة ظل للرأس */
     z-index: 1000;
 }
 
 .header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1200px; /* الحد الأقصى لعرض الرأس */
-    padding: 0 20px;
-    position: relative;
-}
-
-.chapter-header {
-    background-color: #039be5; /* لون المربع الأزرق المتوسط */
-    border-radius: 25px;
     padding: 10px 20px;
-    flex-grow: 1;
-    text-align: center; /* توسيط النص داخل المربع */
-    max-width: 80%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .chapter-header h1 {
     margin: 0;
     font-size: 24px;
     color: #fff;
+    text-align: center;
+    flex: 1;
 }
 
 .chapter-number {
     width: 40px;
     height: 40px;
-    background-color: #01579b; /* اللون الأزرق الغامق للدائرة */
+    background-color: #ffffff;
+    color: #007bff;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-size: 18px;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    left: 20px;
-    top: 0;
-    transform: translateY(-10px); /* تعديل موقع الدائرة قليلاً للأسفل */
+    position: relative;
+    top: 10px; /* تعديل موقع الدائرة قليلاً */
 }
 
+/* محتوى الصفحة */
 .content {
-    margin-top: 120px; /* يضمن أن المحتوى لا يتداخل مع رأس الصفحة الثابت */
+    margin-top: 100px; /* مساحة أعلى لتجنب التداخل مع رأس الصفحة الثابت */
     padding: 20px;
-    text-align: center; /* توسيط المحتوى داخل الصفحة */
 }
 
 .audio-player-container {
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظلال خفيفة لمربع الصوت */
-    max-width: 80%;
-    width: 100%; /* عرض كامل ليتناسب مع التسجيل الصوتي */
-    position: relative;
-}
-
-audio {
-    width: 100%; /* عرض التسجيل الصوتي ليتناسب مع حجم المربع */
-}
-
-audio::-webkit-media-controls-panel {
-    background-color: #f5f5f5; /* خلفية مخصصة للتحكم */
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .audio-info {
-    margin-bottom: 10px; /* مسافة صغيرة بين النص ومشغل الصوت */
+    margin-bottom: 10px;
 }
 
 .narrator-info {
-    font-size: 16px;
-    color: #000; /* اللون الأسود للنص */
-    font-weight: bold; /* خط سميك */
-    margin: 0;
+    font-weight: bold;
+    color: #000;
 }
 
 .narrator-name {
-    color: #0277bd; /* اللون الأزرق لكلمة "تارين" */
+    color: #007bff; /* لون أزرق لتارين */
 }
 
-.social-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
+/* تنسيق الأيقونات */
+.social-icons i {
+    font-size: 23px;
+    color: #000; /* اللون الأسود للأيقونات */
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-.instagram-icon, .youtube-icon {
-    font-size: 25px; /* تصغير الأيقونات ب 3 بكسل إضافية */
-    color: #0277bd; /* اللون الأزرق للأيقونات */
-    margin: 0 12px; /* تقريب الأيقونات من بعضها */
+.social-icons i.fa-instagram {
+    color: #007bff; /* اللون الأزرق لأيقونة الإنستغرام */
 }
 
-.icon-text {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.5); /* لون شفاف للنص بجانب الأيقونات */
-    margin-left: 5px;
+.social-icons i.fa-youtube {
+    color: #ff0000; /* اللون الأحمر لأيقونة اليوتيوب */
 }
 
+/* مربع النص */
 .chapter-container {
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #f5f5f5; /* لون خلفية المربع */
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظلال خفيفة لمربع النص */
-    max-width: 80%;
-    width: 100%; /* عرض كامل ليتناسب مع النص */
-    position: relative;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .chapter-text {
     direction: rtl; /* النص من اليمين إلى اليسار */
-    padding: 10px;
-    color: #000; /* لون النص */
-    font-size: 16px; /* حجم النص */
-    text-align: right; /* توسيط النص إلى اليمين */
+    text-align: right;
 }
 
-/* المربع الثابت في أسفل الصفحة */
+/* تذييل الصفحة الثابت */
 .fixed-footer {
     position: fixed;
-    bottom: 0;
     width: 100%;
-    background-color: #039be5;
-    padding: 10px;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    box-shadow: 0 -4px 2px -2px gray;
     z-index: 1000;
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-}
-
-.footer-buttons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding-bottom: 10px;
+    padding: 10px 20px;
 }
 
 .footer-buttons button {
-    background-color: transparent;
+    background: none;
     border: none;
-    color: white;
+    color: #fff;
     font-size: 20px;
     cursor: pointer;
-}
-
-.footer-colors {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+    margin-right: 10px;
 }
 
 .footer-colors button {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     border: none;
+    margin-left: 5px;
     cursor: pointer;
+    outline: none;
 }
 
-.color1 { background-color: #e57373; } /* لون أحمر */
-.color2 { background-color: #f06292; } /* لون وردي */
-.color3 { background-color: #ba68c8; } /* لون بنفسجي */
-color4 { background-color: #9575cd; } /* لون بنفسجي فاتح */
-color5 { background-color: #64b5f6; } /* لون أزرق فاتح */
-color6 { background-color: #4db6ac; } /* لون أخضر مائل للأزرق */
-color7 { background-color: #81c784; } /* لون أخضر فاتح */
+.color1 { background-color: #ff0000; } /* لون أحمر */
+.color2 { background-color: #ff69b4; } /* لون وردي */
+.color3 { background-color: #800080; } /* لون بنفسجي */
+.color4 { background-color: #dda0dd; } /* لون بنفسجي فاتح */
+.color5 { background-color: #add8e6; } /* لون أزرق فاتح */
+.color6 { background-color: #20b2aa; } /* لون أخضر مائل للأزرق */
+.color7 { background-color: #98fb98; } /* لون أخضر فاتح */
