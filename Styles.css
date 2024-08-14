@@ -58,8 +58,8 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
     left: 20px;
-    top: 0; /* إنزال الدائرة قليلاً للأسفل */
-    transform: translateY(10px); /* تعديل موقع الدائرة قليلاً للأسفل */
+    top: 0;
+    transform: translateY(-10px); /* تعديل موقع الدائرة قليلاً للأسفل */
 }
 
 .content {
@@ -110,9 +110,9 @@ audio::-webkit-media-controls-panel {
 }
 
 .instagram-icon, .youtube-icon {
-    font-size: 28px; /* تصغير الأيقونات 3 بكسل إضافية (الحجم النهائي 28 بكسل) */
+    font-size: 25px; /* تصغير الأيقونات ب 3 بكسل إضافية */
     color: #0277bd; /* اللون الأزرق للأيقونات */
-    margin: 0 15px; /* تقريب الأيقونات من بعضها */
+    margin: 0 12px; /* تقريب الأيقونات من بعضها */
 }
 
 .icon-text {
@@ -139,3 +139,59 @@ audio::-webkit-media-controls-panel {
     font-size: 16px; /* حجم النص */
     text-align: right; /* توسيط النص إلى اليمين */
 }
+
+/* المربع الثابت في أسفل الصفحة */
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #039be5;
+    padding: 10px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.footer-buttons button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.footer-colors {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footer-colors button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.color1 { background-color: #e57373; } /* لون أحمر */
+.color2 { background-color: #f06292; } /* لون وردي */
+.color3 { background-color: #ba68c8; } /* لون بنفسجي */
+color4 { background-color: #9575cd; } /* لون بنفسجي فاتح */
+color5 { background-color: #64b5f6; } /* لون أزرق فاتح */
+color6 { background-color: #4db6ac; } /* لون أخضر مائل للأزرق */
+color7 { background-color: #81c784; } /* لون أخضر فاتح */
