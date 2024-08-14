@@ -117,7 +117,7 @@ audio::-webkit-media-controls-mute-button {
 }
 
 .instagram-icon, .youtube-icon {
-    font-size: 20px; /* تصغير الأيقونات 3 بكسل إضافية (الحجم النهائي 25 بكسل) */
+    font-size: 25px; /* تصغير الأيقونات 3 بكسل إضافية (الحجم النهائي 25 بكسل) */
     color: #0277bd; /* اللون الأزرق للأيقونات */
     margin: 0 10px; /* تقريب الأيقونات من بعضها */
 }
@@ -126,4 +126,23 @@ audio::-webkit-media-controls-mute-button {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5); /* لون شفاف للنص بجانب الأيقونات */
     margin-left: 5px;
-    }
+}
+
+.chapter-container {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f5f5f5; /* لون خلفية المربع */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظلال خفيفة لمربع النص */
+    max-width: 80%;
+    width: 100%; /* عرض كامل ليتناسب مع النص */
+    position: relative;
+}
+
+.chapter-text {
+    direction: rtl; /* النص من اليمين إلى اليسار */
+    padding: 10px;
+    color: #000; /* لون النص */
+    font-size: 16px; /* حجم النص */
+    text-align: right; /* توسيط النص إلى اليمين */
+    }الله 
