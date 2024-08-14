@@ -146,3 +146,7 @@ audio::-webkit-media-controls-mute-button {
     font-size: 16px; /* حجم النص */
     text-align: right; /* توسيط النص إلى اليمين */
 }
+
+audio::-webkit-media-controls-panel {
+    display: none; /* إخفاء اللوحة بالكامل */
+    }
