@@ -3,46 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رواية</title>
+    <title>روايتي</title>
     <link rel="stylesheet" href="Styles.css">
-    <!-- تضمين مكتبة Font Awesome -->
+    <!-- إضافة مكتبة Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="fixed-header">
         <div class="header-container">
-            <div class="chapter-number">1</div>
             <div class="chapter-header">
-                <h1>عنوان الفصل</h1>
+                <h1>لماذا أنا؟</h1>
             </div>
+            <div class="chapter-number">1</div>
         </div>
     </div>
 
     <div class="content">
         <div class="audio-player-container">
-            <audio controls>
-                <source src="FS.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
             <div class="audio-info">
                 <p class="narrator-info">قراءة وسرد الرواية | <span class="narrator-name">تارين</span></p>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/tarin.9_?igsh=MTlmZXh3bHE1b3djbA==" target="_blank" aria-label="Instagram">
-                        <i class="instagram-icon fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/tarin.9_?igshid=MTlmZXh3bHE1b3djbA==" target="_blank">
+                        <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://m.youtube.com/@tarin.9_" target="_blank" aria-label="YouTube">
-                        <i class="youtube-icon fab fa-youtube"></i>
+                    <a href="https://m.youtube.com/@tarin.9_" target="_blank">
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
+            <audio controls>
+                <source src="FS.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الملفات الصوتية.
+            </audio>
         </div>
 
-        <!-- فصل الرواية -->
         <div class="chapter-container">
             <div class="chapter-text">
-                <p>هنا يتم عرض نص الفصل من الرواية. يمكنك كتابة الفصل هنا بحيث يكون النص من اليمين إلى اليسار.</p>
+                هذا نص الفصل الأول من الرواية...
             </div>
         </div>
     </div>
+
+    <div class="fixed-footer">
+        <div class="footer-container">
+            <div class="footer-buttons">
+                <button id="search-button"><i class="fas fa-search"></i></button> <!-- أيقونة البحث -->
+                <button id="font-increase-button">A+</button> <!-- تكبير الخط -->
+                <button id="font-decrease-button">A-</button> <!-- تصغير الخط -->
+                <button id="bold-button"><strong>B</strong></button> <!-- تسميك الخط -->
+                <button id="theme-toggle-button">&#9788;&#9790;</button> <!-- الوضع الليلي والنهاري -->
+            </div>
+            <div class="footer-colors">
+                <button class="color1"></button> <!-- لون أحمر -->
+                <button class="color2"></button> <!-- لون وردي -->
+                <button class="color3"></button> <!-- لون بنفسجي -->
+                <button class="color4"></button> <!-- لون بنفسجي فاتح -->
+                <button class="color5"></button> <!-- لون أزرق فاتح -->
+                <button class="color6"></button> <!-- لون أخضر مائل للأزرق -->
+                <button class="color7"></button> <!-- لون أخضر فاتح -->
+            </div>
+        </div>
+    </div>
+
+    <script src="Chapter.js"></script>
 </body>
-    </html>
+</html>
