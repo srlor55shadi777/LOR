@@ -87,13 +87,6 @@ audio::-webkit-media-controls-panel {
     background-color: #f5f5f5; /* خلفية مخصصة للتحكم */
 }
 
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-volume-slider,
-audio::-webkit-media-controls-timeline,
-audio::-webkit-media-controls-mute-button {
-    filter: grayscale(1) brightness(0.5); /* إلغاء ميزة تسريع أو تنزيل الصوت */
-}
-
 .audio-info {
     margin-bottom: 10px; /* مسافة صغيرة بين النص ومشغل الصوت */
 }
@@ -117,9 +110,9 @@ audio::-webkit-media-controls-mute-button {
 }
 
 .instagram-icon, .youtube-icon {
-    font-size: 25px; /* تصغير الأيقونات 3 بكسل إضافية (الحجم النهائي 25 بكسل) */
+    font-size: 28px; /* تصغير الأيقونات 3 بكسل إضافية (الحجم النهائي 28 بكسل) */
     color: #0277bd; /* اللون الأزرق للأيقونات */
-    margin: 0 10px; /* تقريب الأيقونات من بعضها */
+    margin: 0 15px; /* تقريب الأيقونات من بعضها */
 }
 
 .icon-text {
@@ -146,7 +139,3 @@ audio::-webkit-media-controls-mute-button {
     font-size: 16px; /* حجم النص */
     text-align: right; /* توسيط النص إلى اليمين */
 }
-
-audio::-webkit-media-controls-panel {
-    display: none; /* إخفاء اللوحة بالكامل */
-    }
